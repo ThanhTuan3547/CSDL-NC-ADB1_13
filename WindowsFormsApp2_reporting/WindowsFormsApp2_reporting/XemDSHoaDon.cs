@@ -21,14 +21,30 @@ namespace WindowsFormsApp2_reporting
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DataSet ds = new DataSet();
-            SqlDataAdapter adt = new SqlDataAdapter("select * from HOADON", sc);
-
-            adt.Fill(ds,"HOADON");
-
-            dataGridView1.DataSource = ds.Tables[0];
+            
+            dataGridView1.DataSource = LayToanBoHoaDon().Tables[0];
 
 
+        }
+        DataSet LayToanBoHoaDon()
+        {
+            DataSet data = new DataSet();
+            string query = "select * from HoaDon";
+            using (SqlConnection connection = new SqlConnection())
+            {
+                sc.Open();
+                SqlDataAdapter adt = new SqlDataAdapter(query, sc);
+                adt.Fill(data);
+                sc.Close();
+
+            }
+            return data;
+        }
+
+        private void btnTroVe_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            formList._f0.Show();
         }
     }
 }

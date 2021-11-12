@@ -10,8 +10,7 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp2_reporting
 {
-    //public static MainMenu fo0 = new MainMenu();
-    //public static QuanLyHoaDon fo1 = new QuanLyHoaDon();
+    
     //public class Anyclass
     //{
     //    public static Form2 fo0 = new Form2();
@@ -29,16 +28,26 @@ namespace WindowsFormsApp2_reporting
 
         private void btnThemMoiHoaDon_Click(object sender, EventArgs e)
         {
-            QuanLyHoaDon fo1 = new QuanLyHoaDon();
-            fo1.Show();
-            MainMenu fo2 = new MainMenu();
-            fo2.Hide();
+            
+            this.Hide(); 
+             
+            formList._f1.Show();
+            
         }
 
         private void btnXemDSHoaDon_Click(object sender, EventArgs e)
         {
-            XemDSHoaDon fo3 = new XemDSHoaDon();
-            fo3.Show();
+            this.Hide(); 
+
+            formList._f2.Show();
+
+        }
+
+        private void btnThongKeDoanhThuTheoThang_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            formList._f3.Show();
         }
     }
 }

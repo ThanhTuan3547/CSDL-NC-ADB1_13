@@ -29,15 +29,14 @@ namespace WindowsFormsApp2_reporting
 
             sc.Close();
 
-            MessageBox.Show("Thêm đơn hàng thành công!!"); 
+            MessageBox.Show("Thêm hóa đơn thành công!!"); 
         }
 
         private void btnTroVe_Click(object sender, EventArgs e)
         {
-            QuanLyHoaDon fo1 = new QuanLyHoaDon();
-            fo1.Hide();
-            MainMenu fo2 = new MainMenu();
-            fo2.Show();
+            formList._f1.Hide(); 
+
+            formList._f0.Show();
 
         }
     }

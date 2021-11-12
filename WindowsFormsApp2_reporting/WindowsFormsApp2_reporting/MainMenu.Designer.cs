@@ -36,9 +36,10 @@ namespace WindowsFormsApp2_reporting
             // 
             // btnThemMoiHoaDon
             // 
-            this.btnThemMoiHoaDon.Location = new System.Drawing.Point(304, 77);
+            this.btnThemMoiHoaDon.Location = new System.Drawing.Point(380, 96);
+            this.btnThemMoiHoaDon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnThemMoiHoaDon.Name = "btnThemMoiHoaDon";
-            this.btnThemMoiHoaDon.Size = new System.Drawing.Size(241, 50);
+            this.btnThemMoiHoaDon.Size = new System.Drawing.Size(301, 62);
             this.btnThemMoiHoaDon.TabIndex = 0;
             this.btnThemMoiHoaDon.Text = "THÊM MỚI HÓA ĐƠN";
             this.btnThemMoiHoaDon.UseVisualStyleBackColor = true;
@@ -46,9 +47,10 @@ namespace WindowsFormsApp2_reporting
             // 
             // btnXemDSHoaDon
             // 
-            this.btnXemDSHoaDon.Location = new System.Drawing.Point(304, 144);
+            this.btnXemDSHoaDon.Location = new System.Drawing.Point(380, 187);
+            this.btnXemDSHoaDon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnXemDSHoaDon.Name = "btnXemDSHoaDon";
-            this.btnXemDSHoaDon.Size = new System.Drawing.Size(241, 50);
+            this.btnXemDSHoaDon.Size = new System.Drawing.Size(301, 62);
             this.btnXemDSHoaDon.TabIndex = 1;
             this.btnXemDSHoaDon.Text = "XEM DANH SÁCH HÓA ĐƠN";
             this.btnXemDSHoaDon.UseVisualStyleBackColor = true;
@@ -56,23 +58,27 @@ namespace WindowsFormsApp2_reporting
             // 
             // btnThongKeDoanhThuTheoThang
             // 
-            this.btnThongKeDoanhThuTheoThang.Location = new System.Drawing.Point(304, 219);
+            this.btnThongKeDoanhThuTheoThang.Location = new System.Drawing.Point(380, 274);
+            this.btnThongKeDoanhThuTheoThang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnThongKeDoanhThuTheoThang.Name = "btnThongKeDoanhThuTheoThang";
-            this.btnThongKeDoanhThuTheoThang.Size = new System.Drawing.Size(241, 50);
+            this.btnThongKeDoanhThuTheoThang.Size = new System.Drawing.Size(301, 62);
             this.btnThongKeDoanhThuTheoThang.TabIndex = 2;
             this.btnThongKeDoanhThuTheoThang.Text = "THỐNG KÊ DOANH THU THEO THÁNG";
             this.btnThongKeDoanhThuTheoThang.UseVisualStyleBackColor = true;
+            this.btnThongKeDoanhThuTheoThang.Click += new System.EventHandler(this.btnThongKeDoanhThuTheoThang_Click);
             // 
             // MainMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1000, 562);
             this.Controls.Add(this.btnThongKeDoanhThuTheoThang);
             this.Controls.Add(this.btnXemDSHoaDon);
             this.Controls.Add(this.btnThemMoiHoaDon);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MainMenu";
-            this.Text = "Quan Ly Don Hang";
+            this.Text = "Quản lý hóa đơn";
             this.ResumeLayout(false);
 
         }
