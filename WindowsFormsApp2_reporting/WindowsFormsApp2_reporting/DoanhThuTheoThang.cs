@@ -17,7 +17,7 @@ namespace WindowsFormsApp2_reporting
         {
             InitializeComponent();
         }
-        SqlConnection sc = new SqlConnection(@"Data Source=PIKACHU\PIKACHU;Initial Catalog=ADB1_N13_DATH#01;Integrated Security=True");
+        SqlConnection sc = new SqlConnection(@"Data Source=LAPTOP-FMCUOBFE\SQLEXPRESS;Initial Catalog=ADB1_N13_DATH#01;Integrated Security=True");
         private void btnTroVe_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -29,34 +29,28 @@ namespace WindowsFormsApp2_reporting
             dataGridView1.DataSource = XemDoanhThuThang().Tables[0];
         }
 
-        DataSet XemDoanhThuThang()
+        DataSet XemDoanhThuThang() // lay doanh thu theo tung thang
         {
             DataSet data = new DataSet();
 
             if (comboBox1.Text == "2020")
             {
                 string query = "EXEC DTTT2020";
-                using (SqlConnection connection = new SqlConnection())
-                {
-                    sc.Open();
-                    SqlDataAdapter adt = new SqlDataAdapter(query, sc);
-                    adt.Fill(data);
-                    sc.Close();
-
-                }
+                sc.Open();
+                SqlDataAdapter adt = new SqlDataAdapter(query, sc);
+                adt.Fill(data);
+                sc.Close();
 
             }
             if (comboBox1.Text == "2021")
             {
                 string query = "EXEC DTTT2021";
-                using (SqlConnection connection = new SqlConnection())
-                {
-                    sc.Open();
-                    SqlDataAdapter adt = new SqlDataAdapter(query, sc);
-                    adt.Fill(data);
-                    sc.Close();
+                
+                sc.Open();
+                SqlDataAdapter adt = new SqlDataAdapter(query, sc);
+                adt.Fill(data);
+                sc.Close();
 
-                }
             }
 
             return data;

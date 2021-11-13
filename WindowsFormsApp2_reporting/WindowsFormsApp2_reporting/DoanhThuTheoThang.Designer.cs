@@ -42,19 +42,19 @@ namespace WindowsFormsApp2_reporting
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(157, 26);
+            this.label1.Location = new System.Drawing.Point(361, 21);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(216, 19);
+            this.label1.Size = new System.Drawing.Size(267, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "DOANH THU THEO THÁNG";
             // 
             // btnXemDoanhThu
             // 
-            this.btnXemDoanhThu.Location = new System.Drawing.Point(300, 66);
+            this.btnXemDoanhThu.Location = new System.Drawing.Point(608, 78);
             this.btnXemDoanhThu.Margin = new System.Windows.Forms.Padding(4);
             this.btnXemDoanhThu.Name = "btnXemDoanhThu";
-            this.btnXemDoanhThu.Size = new System.Drawing.Size(122, 36);
+            this.btnXemDoanhThu.Size = new System.Drawing.Size(187, 52);
             this.btnXemDoanhThu.TabIndex = 1;
             this.btnXemDoanhThu.Text = "Xem Doanh Thu";
             this.btnXemDoanhThu.UseVisualStyleBackColor = true;
@@ -64,10 +64,10 @@ namespace WindowsFormsApp2_reporting
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(69, 76);
+            this.label3.Location = new System.Drawing.Point(194, 86);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 17);
+            this.label3.Size = new System.Drawing.Size(49, 20);
             this.label3.TabIndex = 5;
             this.label3.Text = "Năm:";
             // 
@@ -86,14 +86,14 @@ namespace WindowsFormsApp2_reporting
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.MediumAquamarine;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.LightBlue;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(72, 118);
+            this.dataGridView1.Location = new System.Drawing.Point(198, 157);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(350, 233);
+            this.dataGridView1.Size = new System.Drawing.Size(597, 280);
             this.dataGridView1.TabIndex = 7;
             // 
             // comboBox1
@@ -102,18 +102,18 @@ namespace WindowsFormsApp2_reporting
             this.comboBox1.Items.AddRange(new object[] {
             "2020",
             "2021"});
-            this.comboBox1.Location = new System.Drawing.Point(117, 73);
+            this.comboBox1.Location = new System.Drawing.Point(250, 83);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(152, 24);
+            this.comboBox1.Size = new System.Drawing.Size(188, 28);
             this.comboBox1.TabIndex = 8;
             this.comboBox1.Text = "Please select a year";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // DoanhThuTheoThang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(498, 374);
+            this.ClientSize = new System.Drawing.Size(996, 558);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnTroVe);

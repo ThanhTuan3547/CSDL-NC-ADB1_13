@@ -56,11 +56,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ADB_DA1DataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ADB_DA1DataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="DoanhThuTheoThang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,17 +103,6 @@
     <EmbeddedResource Include="XemDSHoaDon.resx">
       <DependentUpon>XemDSHoaDon.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="ADB_DA1DataSet.xsc">
-      <DependentUpon>ADB_DA1DataSet.xsd</DependentUpon>
-    </None>
-    <None Include="ADB_DA1DataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ADB_DA1DataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="ADB_DA1DataSet.xss">
-      <DependentUpon>ADB_DA1DataSet.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

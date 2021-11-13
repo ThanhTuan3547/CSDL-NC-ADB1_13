@@ -50,3 +50,4 @@ C:\Users\hieu2\OneDrive\Tài liệu\GitHub\CSDL-NC-ADB1_13\WindowsFormsApp2_re
 C:\Users\hieu2\OneDrive\Tài liệu\GitHub\CSDL-NC-ADB1_13\WindowsFormsApp2_reporting\WindowsFormsApp2_reporting\obj\Debug\WindowsFormsApp2_reporting.csproj.CoreCompileInputs.cache
 C:\Users\hieu2\OneDrive\Tài liệu\GitHub\CSDL-NC-ADB1_13\WindowsFormsApp2_reporting\WindowsFormsApp2_reporting\obj\Debug\WindowsFormsApp2_reporting.exe
 C:\Users\hieu2\OneDrive\Tài liệu\GitHub\CSDL-NC-ADB1_13\WindowsFormsApp2_reporting\WindowsFormsApp2_reporting\obj\Debug\WindowsFormsApp2_reporting.pdb
+C:\Users\admin\Documents\GitHub\CSDL-NC-ADB1_13\WindowsFormsApp2_reporting\WindowsFormsApp2_reporting\obj\Debug\WindowsFormsApp2_reporting.DoanhThuTheoThang.resources

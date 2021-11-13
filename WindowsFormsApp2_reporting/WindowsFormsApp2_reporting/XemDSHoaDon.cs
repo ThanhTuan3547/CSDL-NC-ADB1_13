@@ -17,7 +17,7 @@ namespace WindowsFormsApp2_reporting
         {
             InitializeComponent();
         }
-        SqlConnection sc = new SqlConnection(@"Data Source=PIKACHU\PIKACHU;Initial Catalog=ADB1_N13_DATH#01;Integrated Security=True");
+        SqlConnection sc = new SqlConnection(@"Data Source=LAPTOP-FMCUOBFE\SQLEXPRESS;Initial Catalog=ADB1_N13_DATH#01;Integrated Security=True");
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -26,18 +26,16 @@ namespace WindowsFormsApp2_reporting
 
 
         }
-        DataSet LayToanBoHoaDon()
+        DataSet LayToanBoHoaDon() // lay danh sach hoa don
         {
             DataSet data = new DataSet();
             string query = "select * from HoaDon";
-            using (SqlConnection connection = new SqlConnection())
-            {
-                sc.Open();
-                SqlDataAdapter adt = new SqlDataAdapter(query, sc);
-                adt.Fill(data);
-                sc.Close();
+            
+            sc.Open();
+            SqlDataAdapter adt = new SqlDataAdapter(query, sc);
+            adt.Fill(data);
+            sc.Close();
 
-            }
             return data;
         }
 
