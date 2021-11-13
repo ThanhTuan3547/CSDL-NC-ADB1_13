@@ -99,3 +99,20 @@ as
 				FROM CTHOADON CT
 				WHERE CT.MaHD = HOADON.MaHD)
 	WHERE MaHD in (select deleted.mahd from deleted)
+----
+CREATE PROCEDURE DTTT2020 AS
+SELECT month(HD.NgayLap) Thang , sum(HD.TongTien) Tong
+FROM HOADON HD, CTHOADON CT
+WHERE year(HD.NgayLap) = 2020
+GROUP BY month(HD.NgayLap)
+
+EXEC DTTT2020
+
+CREATE PROCEDURE DTTT2021 AS
+SELECT month(HD.NgayLap) Thang , sum(HD.TongTien) Tong
+FROM HOADON HD, CTHOADON CT
+WHERE year(HD.NgayLap) = 2021
+GROUP BY month(HD.NgayLap)
+
+EXEC DTTT2021
+

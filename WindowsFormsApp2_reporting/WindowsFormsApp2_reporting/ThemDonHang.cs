@@ -18,7 +18,7 @@ namespace WindowsFormsApp2_reporting
         {
             InitializeComponent();
         }
-        SqlConnection sc = new SqlConnection(@"Data Source=LAPTOP-FMCUOBFE\SQLEXPRESS;Initial Catalog=ADB_DA1;Integrated Security=True");
+        SqlConnection sc = new SqlConnection(@"Data Source=PIKACHU\PIKACHU;Initial Catalog=ADB1_N13_DATH#01;Integrated Security=True");
         private void btnThemHoaDon_Click(object sender, EventArgs e)
         {
             SqlCommand sm = new SqlCommand("insert into Hoadon values('"+textBox1.Text+"','"+textBox2.Text+"', '"+textBox3.Text+"', '"+textBox4.Text+"')", sc);

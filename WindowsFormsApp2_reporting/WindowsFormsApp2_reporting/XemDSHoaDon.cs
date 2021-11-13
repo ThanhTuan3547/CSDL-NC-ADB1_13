@@ -17,7 +17,7 @@ namespace WindowsFormsApp2_reporting
         {
             InitializeComponent();
         }
-        SqlConnection sc = new SqlConnection(@"Data Source=LAPTOP-FMCUOBFE\SQLEXPRESS;Initial Catalog=ADB_DA1;Integrated Security=True");
+        SqlConnection sc = new SqlConnection(@"Data Source=PIKACHU\PIKACHU;Initial Catalog=ADB1_N13_DATH#01;Integrated Security=True");
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -45,6 +45,11 @@ namespace WindowsFormsApp2_reporting
         {
             this.Hide();
             formList._f0.Show();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
