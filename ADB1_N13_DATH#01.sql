@@ -1,6 +1,7 @@
-﻿create database ADB_DATH01
+﻿GO  
+create database ADB1_N13_DATH#01
 go
-use ADB_DATH01
+use ADB1_N13_DATH#01
 go
 --drop database ADB_DA1
 -- use master
@@ -51,8 +52,8 @@ create table CTHOADON
 	SoLuong int,
 	GiaBan money NOT NULL,
 	GiaGiam money NOT NULL,
-   constraint chk_NgayLap CHECK(GiaGiam < GiaBan),
-	ThanhTien money NOT NULL,
+    constraint check_NLap CHECK(GiaGiam < GiaBan and GiaBan >= 20000 and GiaBan < 10000000 and GiaGiam >= 1000 and GiaGiam < 15000),
+	ThanhTien money NOT NULL
 )	
 
 --go
@@ -98,4 +99,3 @@ as
 				FROM CTHOADON CT
 				WHERE CT.MaHD = HOADON.MaHD)
 	WHERE MaHD in (select deleted.mahd from deleted)
-
