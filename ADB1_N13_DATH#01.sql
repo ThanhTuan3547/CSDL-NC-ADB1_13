@@ -1,10 +1,8 @@
-﻿GO  
+GO  
 create database ADB1_N13_DATH#01
 go
 use ADB1_N13_DATH#01
 go
---	drop database ADB1_N13_DATH#01
--- use master
 -- Khach hang
 create table KHACHHANG
 (
@@ -37,7 +35,7 @@ create table HOADON
 	MaHD int identity (1,1) primary key,
 	MaKH int NOT NULL,
 	NgayLap date NOT NULL,
-	TongTien money default 0,
+	TongTien money default 0 not null,
 	constraint chk_NgayLap CHECK(NgayLap >= '2020-05-01' AND NgayLap <= '2021-06-30'),
 	foreign key (MaKH) references KHACHHANG (MaKH)
 )
@@ -50,17 +48,12 @@ create table CTHOADON
 	foreign key (MaHD) references HOADON (MaHD),
 	foreign key (MaSP) references SANPHAM (MaSP),
 	constraint PK_CTHOADON primary key (MaHD, MaSP),
-	SoLuong int,
+	SoLuong int not null,
 	GiaBan money NOT NULL,
 	GiaGiam money NOT NULL,
-    constraint check_NLap CHECK(GiaGiam < GiaBan and GiaBan >= 20000 and GiaBan < 10000000 and GiaGiam >= 1000 and GiaGiam < 15000),
+    constraint check_NLap CHECK(GiaGiam < GiaBan and GiaBan >= 20000 and GiaBan <= 10000000 and GiaGiam >= 1000 and GiaGiam <= 15000),
 	ThanhTien money NOT NULL
 )	
-
---go
---UPDATE HOADON
---SET HOADON.TongTien = CTHOADON.ThanhTien 
---from HOADON inner join CTHOADON on (HOADON.MaHD = CTHOADON.MaHD);
 
 -- trigger 
 
