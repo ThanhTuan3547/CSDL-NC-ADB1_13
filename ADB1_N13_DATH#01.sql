@@ -3,12 +3,12 @@ create database ADB1_N13_DATH#01
 go
 use ADB1_N13_DATH#01
 go
---drop database ADB_DA1
+--	drop database ADB1_N13_DATH#01
 -- use master
 -- Khach hang
 create table KHACHHANG
 (
-	MaKH char(10) NOT NULL primary key,
+	MaKH int identity (1,1) primary key,
 	Ho nvarchar(10) NOT NULL,
 	Ten nvarchar(10) NOT NULL,
 	NgSinh date NOT NULL,
@@ -23,7 +23,7 @@ go
 -- San pham
 create table SANPHAM
 (
-	MaSP char(10) NOT NULL primary key,
+	MaSP int identity (1,1) primary key,
 	TenSP nvarchar(50) NOT NULL,
 	SoLuongTon int NOT NULL,
 	Mota nvarchar(100) NULL,
@@ -33,8 +33,8 @@ go
 -- Hoa don
 create table HOADON
 (
-	MaHD char(10) NOT NULL primary key,
-	MaKH char(10) NOT NULL,
+	MaHD int identity (1,1) primary key,
+	MaKH int NOT NULL,
 	NgayLap date NOT NULL,
 	TongTien money default 0,
 	constraint chk_NgayLap CHECK(NgayLap >= '2020-05-01' AND NgayLap <= '2021-06-30'),
@@ -44,8 +44,8 @@ go
 -- Chi tiet hoa don
 create table CTHOADON
 (
-	MaHD char(10) NOT NULL,
-	MaSP char(10) NOT NULL,
+	MaHD int NOT NULL,
+	MaSP int NOT NULL,
 	foreign key (MaHD) references HOADON (MaHD),
 	foreign key (MaSP) references SANPHAM (MaSP),
 	constraint PK_CTHOADON primary key (MaHD, MaSP),
@@ -100,19 +100,32 @@ as
 				WHERE CT.MaHD = HOADON.MaHD)
 	WHERE MaHD in (select deleted.mahd from deleted)
 ----
+go
 CREATE PROCEDURE DTTT2020 AS
 SELECT month(HD.NgayLap) Thang , sum(HD.TongTien) Tong
 FROM HOADON HD, CTHOADON CT
 WHERE year(HD.NgayLap) = 2020
 GROUP BY month(HD.NgayLap)
 
-EXEC DTTT2020
-
+go
 CREATE PROCEDURE DTTT2021 AS
 SELECT month(HD.NgayLap) Thang , sum(HD.TongTien) Tong
 FROM HOADON HD, CTHOADON CT
 WHERE year(HD.NgayLap) = 2021
 GROUP BY month(HD.NgayLap)
-
-EXEC DTTT2021
-
+go
+create function TonTaiMaKH(@MaKH int) 
+returns bit  
+as 
+begin 
+	if (exists (select MaKH  
+				from HOADON 
+				where @MaKH = MaKH))
+		begin 
+			return 1
+		end 
+	else 
+		return 0
+	return 0
+end
+go
