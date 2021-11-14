@@ -1,4 +1,4 @@
-GO  
+﻿GO  
 create database ADB1_N13_DATH#01
 go
 use ADB1_N13_DATH#01
@@ -93,33 +93,3 @@ as
 				FROM CTHOADON CT
 				WHERE CT.MaHD = HOADON.MaHD)
 	WHERE MaHD in (select deleted.mahd from deleted)
-----
-go
-CREATE PROCEDURE DTTT2020 AS
-SELECT month(HD.NgayLap) Thang , sum(HD.TongTien) Tong
-FROM HOADON HD, CTHOADON CT
-WHERE year(HD.NgayLap) = 2020
-GROUP BY month(HD.NgayLap)
-
-go
-CREATE PROCEDURE DTTT2021 AS
-SELECT month(HD.NgayLap) Thang , sum(HD.TongTien) Tong
-FROM HOADON HD, CTHOADON CT
-WHERE year(HD.NgayLap) = 2021
-GROUP BY month(HD.NgayLap)
-go
-create function TonTaiMaKH(@MaKH int) 
-returns bit  
-as 
-begin 
-	if (exists (select MaKH  
-				from HOADON 
-				where @MaKH = MaKH))
-		begin 
-			return 1
-		end 
-	else 
-		return 0
-	return 0
-end
-go
