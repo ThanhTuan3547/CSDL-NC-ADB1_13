@@ -1,4 +1,6 @@
 ﻿go
+ use ADB1_N13_DATH#01
+ go
 DECLARE @StartTime datetime
 DECLARE @EndTime datetime
 -- a. Cho danh sach hoa don lap trong nam 2020
