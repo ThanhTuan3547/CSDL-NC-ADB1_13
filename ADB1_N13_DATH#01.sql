@@ -26,6 +26,7 @@ create table SANPHAM
 	MaSP char(10) NOT NULL primary key,
 	TenSP nvarchar(50) NOT NULL,
 	SoLuongTon int NOT NULL,
+	constraint chk_slt check(SoLuongTon >= 0),
 	Mota nvarchar(100) NULL,
 	Gia money NOT NULL
 )
