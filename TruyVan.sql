@@ -1,6 +1,6 @@
-﻿go
- use ADB1_N13_DATH#01
- go
+go
+use ADB1_N13_DATH#01
+go
 DECLARE @StartTime datetime
 DECLARE @EndTime datetime
 -- a. Cho danh sach hoa don lap trong nam 2020
@@ -35,7 +35,7 @@ SELECT DATEDIFF(MS,@StartTime,@EndTime) AS [Thoi gian thuc thi cau d]
 SELECT @StartTime=GETDATE() 
 SELECT sp.MaSP, sp.TenSP, sp.Mota, sp.SoLuongTon, sp.Gia FROM SANPHAM sp
 WHERE SP.MaSP IN (SELECT TOP(10) C.MASP FROM CTHoaDon C INNER JOIN HOADON H 
-										               ON C.maHD = H.maHD GROUP BY C.MaSP ORDER BY SUM(C.SoLuong) DESC)
+			ON C.maHD = H.maHD GROUP BY C.MaSP ORDER BY SUM(C.SoLuong) DESC)
 SELECT @EndTime=GETDATE()
 SELECT DATEDIFF(MS,@StartTime,@EndTime) AS [Thoi gian thuc thi cau e]
 -- f. cho danh sach cac san pham co doanh thu cao nhat
@@ -43,7 +43,7 @@ SELECT @StartTime=GETDATE()
 select sp.MaSP, sp.TenSP, sp.Mota, sp.SoLuongTon, sp.Gia--, MAX(sp.DoanhThu) as DoanhThu
 FROM SANPHAM sp
 WHERE SP.MaSP IN (SELECT TOP(10) C.MASP FROM CTHoaDon C INNER JOIN HOADON H 
-										               ON C.maHD = H.maHD GROUP BY C.MaSP ORDER BY SUM(C.ThanhTien) DESC)
+			ON C.maHD = H.maHD GROUP BY C.MaSP ORDER BY SUM(C.ThanhTien) DESC)
 SELECT @EndTime=GETDATE()
 --This will return execution time of your query
 SELECT DATEDIFF(MS,@StartTime,@EndTime) AS [Thoi gian thuc thi cau f]
