@@ -1,4 +1,6 @@
 ﻿go
+use ADB1_N13_DATH#01
+go
 DECLARE @StartTime datetime
 DECLARE @EndTime datetime
 -- a. Cho danh sach hoa don lap trong nam 2020
@@ -33,7 +35,7 @@ SELECT DATEDIFF(MS,@StartTime,@EndTime) AS [Thoi gian thuc thi cau d]
 SELECT @StartTime=GETDATE() 
 SELECT sp.MaSP, sp.TenSP, sp.Mota, sp.SoLuongTon, sp.Gia FROM SANPHAM sp
 WHERE SP.MaSP IN (SELECT TOP(10) C.MASP FROM CTHoaDon C INNER JOIN HOADON H 
-										               ON C.maHD = H.maHD GROUP BY C.MaSP ORDER BY SUM(C.SoLuong) DESC)
+				ON C.maHD = H.maHD GROUP BY C.MaSP ORDER BY SUM(C.SoLuong) DESC)
 SELECT @EndTime=GETDATE()
 SELECT DATEDIFF(MS,@StartTime,@EndTime) AS [Thoi gian thuc thi cau e]
 -- f. cho danh sach cac san pham co doanh thu cao nhat
@@ -41,11 +43,11 @@ SELECT @StartTime=GETDATE()
 select sp.MaSP, sp.TenSP, sp.Mota, sp.SoLuongTon, sp.Gia--, MAX(sp.DoanhThu) as DoanhThu
 FROM SANPHAM sp
 WHERE SP.MaSP IN (SELECT TOP(10) C.MASP FROM CTHoaDon C INNER JOIN HOADON H 
-										               ON C.maHD = H.maHD GROUP BY C.MaSP ORDER BY SUM(C.ThanhTien) DESC)
+					ON C.maHD = H.maHD GROUP BY C.MaSP ORDER BY SUM(C.ThanhTien) DESC)
 SELECT @EndTime=GETDATE()
 --This will return execution time of your query
 SELECT DATEDIFF(MS,@StartTime,@EndTime) AS [Thoi gian thuc thi cau f]
---a. Select * from A join B join C on.... Và Select * from A,B,C where A.x = B.x....
+--5a. Select * from A join B join C on.... Và Select * from A,B,C where A.x = B.x....
 SELECT @StartTime=GETDATE() 
 Select * from SANPHAM s join cthoadon ct on s.MASP = CT.MASP join HOADON h on CT.MaHD = H.MAHD 
 SELECT @EndTime=GETDATE()
@@ -53,11 +55,12 @@ SELECT @EndTime=GETDATE()
 SELECT DATEDIFF(MS,@StartTime,@EndTime) AS [Thoi gian thuc thi cau 5a1]
 --------------------------
 SELECT @StartTime=GETDATE() 
-Select * from SANPHAM s, cthoadon ct, HOADON h where s.masp = ct.MaSP and ct.MaHD = H.MAHD 
+Select * from SANPHAM s, cthoadon ct, HOADON h 
+where s.masp = ct.MaSP and ct.MaHD = H.MAHD 
 SELECT @EndTime=GETDATE()
 --This will return execution time of your query
 SELECT DATEDIFF(MS,@StartTime,@EndTime) AS [Thoi gian thuc thi cau 5a2]
---b. Select * from A jọin B (A có số dòng nhỏ, B rất lớn) và Select * from B join A
+--5b. Select * from A jọin B (A có số dòng nhỏ, B rất lớn) và Select * from B join A
 SELECT @StartTime=GETDATE() 
 Select * from SANPHAM s join cthoadon ct on s.MASP = CT.MASP
 SELECT @EndTime=GETDATE()
