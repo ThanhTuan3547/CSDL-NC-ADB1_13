@@ -54,3 +54,58 @@ begin tran
 go 
 
 select * from CTHOADONONLINE
+
+
+go  
+--2 thêm đơn hàng online 
+
+alter proc ThemDonHangOnline (
+	@MAHOADON INT ,
+	@MAKH INT  ,
+	@SDT VARCHAR(10)  ,
+	@NGAYLAP DATE  ,
+	@DIACHIGIAOHANG NVARCHAR(100)  ,
+	@HINHTHUCTHANHTOAN NVARCHAR(30)  ,
+	@DONVIVANCHUYEN NVARCHAR(30)  ,
+	@PHIVANCHUYEN MONEY,
+	@TONGTIEN MONEY  
+)
+as 
+begin tran
+	insert into HOADONONLINE values (@MAHOADON, @MAKH, @SDT, Cast(@NGAYLAP as datetime), @HINHTHUCTHANHTOAN,@DONVIVANCHUYEN,@PHIVANCHUYEN, @TONGTIEN)
+
+go 
+
+
+--3 tạo mã hóa đơn online: 
+
+alter proc TaoMaHoaDonMoi(
+	@maHoaDon int
+)
+as 
+begin tran 
+	set @maHoaDon = (select  top 1 MAHOADON 
+	from HOADONONLINE
+	 order by (MAHOADON) desc) + 1
+	 select @maHoaDon
+	 commit tran  
+
+go
+
+--4: thêm chi tiết đơn hàng online 
+
+alter proc ThemCTDHOnline (
+	@MAHOADON INT  ,
+	@MASP INT  ,
+	@SOLUONG INT  ,
+	@GIATIEN MONEY  ,
+	@THANHTIEN MONEY 
+)
+as  
+begin tran 
+	insert into CTHOADONONLINE values (@MAHOADON, @MASP, @SOLUONG, @GIATIEN, @THANHTIEN)	
+	commit tran
+go 
+
+--5: xem lịch sử mua hàng 
+
