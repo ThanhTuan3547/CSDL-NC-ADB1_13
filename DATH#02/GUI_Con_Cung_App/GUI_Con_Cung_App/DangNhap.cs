@@ -13,13 +13,15 @@ namespace GUI_Con_Cung_App
 {
     public partial class DangNhap : Form
     {
-        
-        public DangNhap()
+        private ConnectDB cdb;
+        private SqlConnection sqlCon;
+        public DangNhap(ConnectDB cdb, SqlConnection sqlCon)
         {
+            this.cdb = cdb;
+            this.sqlCon = sqlCon;
             InitializeComponent();
         }
 
-        SqlConnection sqlCon = new SqlConnection(Connection_string.Conn_String());
         private void buttton_DangNhap_Click(object sender, EventArgs e)
         {
             string username = TaiKhoan.Text;
