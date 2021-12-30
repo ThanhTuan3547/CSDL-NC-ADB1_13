@@ -23,7 +23,7 @@ namespace GUI_Con_Cung_App
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DangNhap());
+            Application.Run(new HomePage());
 
         }
     }

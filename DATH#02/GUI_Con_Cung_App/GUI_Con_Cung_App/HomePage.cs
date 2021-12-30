@@ -16,5 +16,15 @@ namespace GUI_Con_Cung_App
         {
             InitializeComponent();
         }
+
+        private void DS_SanPham_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void input_TimKiem_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

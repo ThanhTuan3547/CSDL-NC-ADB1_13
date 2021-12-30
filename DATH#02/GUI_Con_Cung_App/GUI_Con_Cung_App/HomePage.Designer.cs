@@ -42,6 +42,7 @@ namespace GUI_Con_Cung_App
             this.input_TimKiem.Name = "input_TimKiem";
             this.input_TimKiem.Size = new System.Drawing.Size(298, 22);
             this.input_TimKiem.TabIndex = 0;
+            this.input_TimKiem.TextChanged += new System.EventHandler(this.input_TimKiem_TextChanged);
             // 
             // btn_TimKiem
             // 
@@ -63,7 +64,7 @@ namespace GUI_Con_Cung_App
             "Sữa tươi các loại"});
             this.Menu.Location = new System.Drawing.Point(13, 13);
             this.Menu.Name = "Menu";
-            this.Menu.Size = new System.Drawing.Size(120, 132);
+            this.Menu.Size = new System.Drawing.Size(120, 20);
             this.Menu.TabIndex = 2;
             // 
             // DS_SanPham
@@ -75,6 +76,7 @@ namespace GUI_Con_Cung_App
             this.DS_SanPham.RowTemplate.Height = 24;
             this.DS_SanPham.Size = new System.Drawing.Size(459, 257);
             this.DS_SanPham.TabIndex = 3;
+            this.DS_SanPham.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DS_SanPham_CellContentClick);
             // 
             // HomePage
             // 
