@@ -50,5 +50,10 @@ namespace GUI_Con_Cung_App
                 MessageBox.Show("dang nhap thanh cong");
             }
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
