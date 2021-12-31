@@ -31,8 +31,16 @@ namespace GUI_Con_Cung_App
         {
             this.input_TimKiem = new System.Windows.Forms.TextBox();
             this.btn_TimKiem = new System.Windows.Forms.Button();
-            this.Menu = new System.Windows.Forms.ListBox();
             this.DS_SanPham = new System.Windows.Forms.DataGridView();
+            this.TenSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SLTon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Mua = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.btn_GioHang = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DS_SanPham)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,38 +61,100 @@ namespace GUI_Con_Cung_App
             this.btn_TimKiem.Text = "Tìm Kiếm";
             this.btn_TimKiem.UseVisualStyleBackColor = true;
             // 
-            // Menu
-            // 
-            this.Menu.FormattingEnabled = true;
-            this.Menu.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.Menu.ItemHeight = 16;
-            this.Menu.Items.AddRange(new object[] {
-            "Sữa bột cao cấp ",
-            "Bỉm tã khuyến mãi ",
-            "Sữa tươi các loại"});
-            this.Menu.Location = new System.Drawing.Point(13, 13);
-            this.Menu.Name = "Menu";
-            this.Menu.Size = new System.Drawing.Size(120, 20);
-            this.Menu.TabIndex = 2;
-            // 
             // DS_SanPham
             // 
             this.DS_SanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DS_SanPham.Location = new System.Drawing.Point(177, 129);
+            this.DS_SanPham.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.TenSP,
+            this.MaSP,
+            this.Gia,
+            this.MoTa,
+            this.SLTon,
+            this.Mua});
+            this.DS_SanPham.Location = new System.Drawing.Point(65, 130);
             this.DS_SanPham.Name = "DS_SanPham";
             this.DS_SanPham.RowHeadersWidth = 51;
             this.DS_SanPham.RowTemplate.Height = 24;
-            this.DS_SanPham.Size = new System.Drawing.Size(459, 257);
+            this.DS_SanPham.Size = new System.Drawing.Size(653, 257);
             this.DS_SanPham.TabIndex = 3;
             this.DS_SanPham.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DS_SanPham_CellContentClick);
+            // 
+            // TenSP
+            // 
+            this.TenSP.HeaderText = "Tên";
+            this.TenSP.MinimumWidth = 6;
+            this.TenSP.Name = "TenSP";
+            this.TenSP.Width = 125;
+            // 
+            // MaSP
+            // 
+            this.MaSP.HeaderText = "Mã sản phẩm";
+            this.MaSP.MinimumWidth = 6;
+            this.MaSP.Name = "MaSP";
+            this.MaSP.ReadOnly = true;
+            this.MaSP.Width = 125;
+            // 
+            // Gia
+            // 
+            this.Gia.HeaderText = "Giá";
+            this.Gia.MinimumWidth = 6;
+            this.Gia.Name = "Gia";
+            this.Gia.Width = 125;
+            // 
+            // MoTa
+            // 
+            this.MoTa.HeaderText = "Mô Tả";
+            this.MoTa.MinimumWidth = 6;
+            this.MoTa.Name = "MoTa";
+            this.MoTa.Width = 125;
+            // 
+            // SLTon
+            // 
+            this.SLTon.HeaderText = "Số lượng tồn";
+            this.SLTon.MinimumWidth = 6;
+            this.SLTon.Name = "SLTon";
+            this.SLTon.Width = 125;
+            // 
+            // Mua
+            // 
+            this.Mua.HeaderText = "Thêm Vào Giỏ";
+            this.Mua.MinimumWidth = 6;
+            this.Mua.Name = "Mua";
+            this.Mua.Text = "Thêm";
+            this.Mua.UseColumnTextForButtonValue = true;
+            this.Mua.Width = 125;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Sữa bột cao cấp ",
+            "Bỉm tã ",
+            "Sữa tươi các loại ",
+            "Ăn dặm, dinh dưỡng ",
+            "Chăm sóc gia đình "});
+            this.comboBox1.Location = new System.Drawing.Point(12, 28);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.TabIndex = 4;
+            // 
+            // btn_GioHang
+            // 
+            this.btn_GioHang.Location = new System.Drawing.Point(680, 29);
+            this.btn_GioHang.Name = "btn_GioHang";
+            this.btn_GioHang.Size = new System.Drawing.Size(90, 34);
+            this.btn_GioHang.TabIndex = 5;
+            this.btn_GioHang.Text = "Giỏ hàng";
+            this.btn_GioHang.UseVisualStyleBackColor = true;
             // 
             // HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_GioHang);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.DS_SanPham);
-            this.Controls.Add(this.Menu);
             this.Controls.Add(this.btn_TimKiem);
             this.Controls.Add(this.input_TimKiem);
             this.Name = "HomePage";
@@ -99,7 +169,15 @@ namespace GUI_Con_Cung_App
 
         private System.Windows.Forms.TextBox input_TimKiem;
         private System.Windows.Forms.Button btn_TimKiem;
-        private System.Windows.Forms.ListBox Menu;
         private System.Windows.Forms.DataGridView DS_SanPham;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenSP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaSP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Gia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MoTa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SLTon;
+        private System.Windows.Forms.DataGridViewButtonColumn Mua;
+        private System.Windows.Forms.Button btn_GioHang;
     }
 }

@@ -17,17 +17,36 @@ begin tran
 			print (N'Đăng nhập thành công')
 
 			declare @Loai char(2),
-					@MaNguoiDung int
-			set @MaNguoiDung = -1
+					@MaNguoiDung int, 
+					@idTaiKhoan varchar(20) 
+			set @MaNguoiDung = ''
 			select @Loai = LOAITK
 			from TaiKhoan
 			where TaiKhoan.USERNAME = @TK
-				
-			select @MaNguoiDung = taikhoanid 
+			
+			select @idTaiKhoan = TAIKHOANID
 			from TAIKHOAN 
-			where TAIKHOAN.USERNAME = @TK
+			where TaiKhoan.USERNAME = @TK
 
-			select @Loai as LoaiTK, @MaNguoiDung as TaiKhoanID
+			if @Loai  = 'NV'
+			begin 
+				select @MaNguoiDung = MaNV	 
+				from NHANVIEN 
+				where NHANVIEN.IDTAIKHOAN = @MaNguoiDung	
+			end
+			else if @Loai = 'KH' 
+			begin  
+				select @MaNguoiDung = MaKH 
+				from KHACHHANG 
+				where IDTAIKHOAN = @MaNguoiDung 
+			end 
+			else
+			begin  
+				select @MaNguoiDung = MAQT 
+				from QUANTRI 
+				where IDTAIKHOAN = @MaNguoiDung 
+			end 
+			select @Loai as LoaiTK, @MaNguoiDung as MaSoNguoiDung
 		end
 
 	else 
@@ -92,4 +111,6 @@ go
 
 --5: xem lịch sử mua hàng 
 
+
+--6: xem tất cả sản phẩm trong cửa hàng: 
 
