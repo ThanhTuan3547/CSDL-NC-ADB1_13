@@ -1,6 +1,6 @@
 ﻿--1: Đăng nhập 
 
-alter proc DangNhap
+create proc DangNhap
 (	
 	@TK varchar(20),
 	@MK varchar(30)
