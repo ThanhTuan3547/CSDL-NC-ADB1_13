@@ -7,14 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace GUI_Con_Cung_App
 {
     public partial class HomePage : Form
     {
-        public HomePage()
+        private DangNhap DN;
+        private SqlConnection cnn; 
+        public HomePage(DangNhap DN, SqlConnection cnn)
         {
+            this.cnn = cnn;
+            this.DN = DN; 
+
             InitializeComponent();
+           
         }
 
         private void DS_SanPham_CellContentClick(object sender, DataGridViewCellEventArgs e)

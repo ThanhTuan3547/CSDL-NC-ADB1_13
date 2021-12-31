@@ -16,7 +16,7 @@ namespace GUI_Con_Cung_App
         public ConnectDB()
         {
             InitializeComponent();
-            Server_textBox.Text = "PIKACHU\\PIKACHU";
+            Server_textBox.Text = "LAPTOP-FMCUOBFE\\SQLEXPRESS";
             Database_textBox.Text = "ADB1_N13_DATH#02";
         }
 
@@ -30,19 +30,28 @@ namespace GUI_Con_Cung_App
             string connectionString;
             SqlConnection cnn;
             // build connection string to sql
-            connectionString = @"Data Source =";
-            connectionString += Server_textBox.Text + ";Initial Catalog=" + Database_textBox.Text + ";Integrated Security=True;";
+            connectionString = @"Data Source=";
+            connectionString += Server_textBox.Text + ";Initial Catalog=" + Database_textBox.Text + ";Integrated Security=True";
             //System.Diagnostics.Debug.WriteLine(connectionString);
             try
             {
                 cnn = new SqlConnection(connectionString);
                 //cnn.Open();
                 //this.Hide();
-                MessageBox.Show("Connected");
-                // open new form Interface()
-                this.Hide();
-                DangNhap DangNhap1 = new DangNhap(this, cnn);
-                DangNhap1.Show();
+                cnn.Open();
+                if (cnn.State == ConnectionState.Open)
+                {
+                    MessageBox.Show("Connected");
+                    // open new form Interface()
+                    this.Hide();
+                    DangNhap DangNhap1 = new DangNhap(this, cnn);
+                    DangNhap1.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Connect Failed");
+                   
+                }
 
 
             }

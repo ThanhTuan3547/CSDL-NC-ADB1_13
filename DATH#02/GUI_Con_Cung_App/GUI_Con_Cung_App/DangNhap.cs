@@ -27,27 +27,43 @@ namespace GUI_Con_Cung_App
             string username = TaiKhoan.Text;
             string password = MatKhau.Text; 
 
-            if(username == "" || password == "" || username.Length > 20 || password.Length > 20)
+            if(username == "" || password == "" || username.Length > 20 || password.Length > 30)
             {
                 MessageBox.Show("Tài khoản hoặc mật khẩu không hợp lệ");
                 return;
             }
 
             string sqlquery = "exec DangNhap " + username + ", " + password + "";
-            SqlCommand sm = new SqlCommand(sqlquery);
-            sqlCon.Open();
-            //sm.ExecuteNonQuery();
-
-            DataSet thongTinTaiKhoan = new DataSet();
+            
+            //sqlCon.Open();
+            
+            DataTable thongTinTaiKhoan = new DataTable();
             SqlDataAdapter adt = new SqlDataAdapter(sqlquery, sqlCon);
             adt.Fill(thongTinTaiKhoan);
             sqlCon.Close();
-            string makh = thongTinTaiKhoan.Tables[0].Rows[0][0].ToString();
-            string phanLoai = thongTinTaiKhoan.Tables[0].Rows[0][1].ToString();
+            string makh = thongTinTaiKhoan.Rows[0][1].ToString();
+            string phanLoai = thongTinTaiKhoan.Rows[0][0].ToString();
+
             // TODO: con nua...
-            if(phanLoai == "KH")
+            if (phanLoai == "KH")
             {
-                MessageBox.Show("dang nhap thanh cong");
+                this.Hide();
+                HomePage KH = new HomePage(this, this.sqlCon);
+                KH.Show(); 
+            }
+            if(phanLoai == "QT")
+            {
+                this.Hide();
+            }
+            if (phanLoai == "QL") // phân hệ quản lý 
+            {
+                this.Hide();
+                // TODO: cho chuyển qua trang của quản lý  
+            }
+            if (phanLoai == "NS") // phân hệ nhân sự
+            {
+                this.Hide();
+                //TODO: cho chuyển qua trang của nhân sự
             }
         }
 
