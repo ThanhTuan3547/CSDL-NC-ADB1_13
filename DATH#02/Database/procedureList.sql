@@ -1,6 +1,6 @@
 ﻿--1: Đăng nhập 
 
-create proc DangNhap
+alter proc DangNhap
 (	
 	@TK varchar(20),
 	@MK varchar(30)
@@ -19,7 +19,7 @@ begin tran
 			declare @Loai char(2),
 					@MaNguoiDung int, 
 					@idTaiKhoan varchar(20) 
-			set @MaNguoiDung = ''
+			set @MaNguoiDung = -1
 			select @Loai = LOAITK
 			from TaiKhoan
 			where TaiKhoan.USERNAME = @TK
@@ -32,19 +32,19 @@ begin tran
 			begin 
 				select @MaNguoiDung = MaNV	 
 				from NHANVIEN 
-				where NHANVIEN.IDTAIKHOAN = @MaNguoiDung	
+				where NHANVIEN.IDTAIKHOAN = @idTaiKhoan	
 			end
 			else if @Loai = 'KH' 
 			begin  
 				select @MaNguoiDung = MaKH 
 				from KHACHHANG 
-				where IDTAIKHOAN = @MaNguoiDung 
+				where IDTAIKHOAN = @idTaiKhoan 
 			end 
 			else
 			begin  
 				select @MaNguoiDung = MAQT 
 				from QUANTRI 
-				where IDTAIKHOAN = @MaNguoiDung 
+				where IDTAIKHOAN = @idTaiKhoan 
 			end 
 			select @Loai as LoaiTK, @MaNguoiDung as MaSoNguoiDung
 		end
@@ -74,6 +74,7 @@ create proc ThemDonHangOnline (
 )
 as 
 begin tran
+	set @MAHOADON = 
 	insert into HOADONONLINE values (@MAHOADON, @MAKH, @SDT, Cast(@NGAYLAP as datetime),@DIACHIGIAOHANG, @HINHTHUCTHANHTOAN,@DONVIVANCHUYEN,@PHIVANCHUYEN, @TONGTIEN)
 	commit tran
 go 
