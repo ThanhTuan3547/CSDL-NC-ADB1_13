@@ -32,15 +32,15 @@ namespace GUI_Con_Cung_App
             this.input_TimKiem = new System.Windows.Forms.TextBox();
             this.btn_TimKiem = new System.Windows.Forms.Button();
             this.DS_SanPham = new System.Windows.Forms.DataGridView();
-            this.TenSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.btn_GioHang = new System.Windows.Forms.Button();
             this.MaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SLTon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Mua = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.btn_GioHang = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DS_SanPham)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,8 +65,8 @@ namespace GUI_Con_Cung_App
             // 
             this.DS_SanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DS_SanPham.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.TenSP,
             this.MaSP,
+            this.TenSP,
             this.Gia,
             this.MoTa,
             this.SLTon,
@@ -79,12 +79,29 @@ namespace GUI_Con_Cung_App
             this.DS_SanPham.TabIndex = 3;
             this.DS_SanPham.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DS_SanPham_CellContentClick);
             // 
-            // TenSP
+            // comboBox1
             // 
-            this.TenSP.HeaderText = "Tên";
-            this.TenSP.MinimumWidth = 6;
-            this.TenSP.Name = "TenSP";
-            this.TenSP.Width = 125;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Sữa bột cao cấp ",
+            "Bỉm tã ",
+            "Sữa tươi các loại ",
+            "Ăn dặm, dinh dưỡng ",
+            "Chăm sóc gia đình "});
+            this.comboBox1.Location = new System.Drawing.Point(12, 28);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.TabIndex = 4;
+            // 
+            // btn_GioHang
+            // 
+            this.btn_GioHang.Location = new System.Drawing.Point(680, 29);
+            this.btn_GioHang.Name = "btn_GioHang";
+            this.btn_GioHang.Size = new System.Drawing.Size(90, 34);
+            this.btn_GioHang.TabIndex = 5;
+            this.btn_GioHang.Text = "Giỏ hàng";
+            this.btn_GioHang.UseVisualStyleBackColor = true;
+            this.btn_GioHang.Click += new System.EventHandler(this.btn_GioHang_Click);
             // 
             // MaSP
             // 
@@ -93,6 +110,13 @@ namespace GUI_Con_Cung_App
             this.MaSP.Name = "MaSP";
             this.MaSP.ReadOnly = true;
             this.MaSP.Width = 125;
+            // 
+            // TenSP
+            // 
+            this.TenSP.HeaderText = "Tên";
+            this.TenSP.MinimumWidth = 6;
+            this.TenSP.Name = "TenSP";
+            this.TenSP.Width = 125;
             // 
             // Gia
             // 
@@ -120,32 +144,11 @@ namespace GUI_Con_Cung_App
             this.Mua.HeaderText = "Thêm Vào Giỏ";
             this.Mua.MinimumWidth = 6;
             this.Mua.Name = "Mua";
+            this.Mua.ReadOnly = true;
+            this.Mua.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Mua.Text = "Thêm";
             this.Mua.UseColumnTextForButtonValue = true;
             this.Mua.Width = 125;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Sữa bột cao cấp ",
-            "Bỉm tã ",
-            "Sữa tươi các loại ",
-            "Ăn dặm, dinh dưỡng ",
-            "Chăm sóc gia đình "});
-            this.comboBox1.Location = new System.Drawing.Point(12, 28);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 4;
-            // 
-            // btn_GioHang
-            // 
-            this.btn_GioHang.Location = new System.Drawing.Point(680, 29);
-            this.btn_GioHang.Name = "btn_GioHang";
-            this.btn_GioHang.Size = new System.Drawing.Size(90, 34);
-            this.btn_GioHang.TabIndex = 5;
-            this.btn_GioHang.Text = "Giỏ hàng";
-            this.btn_GioHang.UseVisualStyleBackColor = true;
             // 
             // HomePage
             // 
@@ -172,12 +175,12 @@ namespace GUI_Con_Cung_App
         private System.Windows.Forms.DataGridView DS_SanPham;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenSP;
+        private System.Windows.Forms.Button btn_GioHang;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaSP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenSP;
         private System.Windows.Forms.DataGridViewTextBoxColumn Gia;
         private System.Windows.Forms.DataGridViewTextBoxColumn MoTa;
         private System.Windows.Forms.DataGridViewTextBoxColumn SLTon;
         private System.Windows.Forms.DataGridViewButtonColumn Mua;
-        private System.Windows.Forms.Button btn_GioHang;
     }
 }

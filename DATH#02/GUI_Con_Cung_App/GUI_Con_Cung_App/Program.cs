@@ -21,12 +21,5 @@ namespace GUI_Con_Cung_App
 
         }
     }
-    public class Products
-    {
-        public string MaSP { get; set; }
-        public string TenSP { get; set; }
-        public string Gia { get; set; }
-        public string MoTa { get; set; }
-        public string SoLuongTon { get; set;  }
-    }
+    
 }
