@@ -35,6 +35,18 @@ namespace GUI_Con_Cung_App
                 "from NHANVIEN nv, TAIKHOAN tk " +
                 "where nv.IDTAIKHOAN = tk.TAIKHOANID AND tk.USERNAME = '" + username + "'";
 
+            string get_DSBH = "select DOANHSOBANHANG " +
+                "from NHANVIEN nv, TAIKHOAN tk " +
+                "where nv.IDTAIKHOAN = tk.TAIKHOANID AND tk.USERNAME = '" + username + "'";
+
+            string get_Thuong = "select THUONG " +
+                "from NHANVIEN nv, TAIKHOAN tk " +
+                "where nv.IDTAIKHOAN = tk.TAIKHOANID AND tk.USERNAME = '" + username + "'";
+
+            string get_Luong = "select LUONG " +
+                "from NHANVIEN nv, TAIKHOAN tk " +
+                "where nv.IDTAIKHOAN = tk.TAIKHOANID AND tk.USERNAME = '" + username + "'";
+
             DataTable Name = new DataTable();
             SqlDataAdapter adt2 = new SqlDataAdapter(get_name, cnn);
             adt2.Fill(Name);
@@ -45,9 +57,26 @@ namespace GUI_Con_Cung_App
             adt3.Fill(dtSoDH);
             string SoDH = dtSoDH.Rows[0][0].ToString();
 
-            name_label.Text = "Hi "+ name;
+            DataTable DSBH = new DataTable();
+            SqlDataAdapter adt5 = new SqlDataAdapter(get_DSBH, cnn);
+            adt5.Fill(DSBH);
+            string sDSBH = DSBH.Rows[0][0].ToString();
 
+            DataTable Thuong = new DataTable();
+            SqlDataAdapter adt6 = new SqlDataAdapter(get_Thuong, cnn);
+            adt6.Fill(Thuong);
+            string sThuong = Thuong.Rows[0][0].ToString();
+
+            DataTable Luong = new DataTable();
+            SqlDataAdapter adt7 = new SqlDataAdapter(get_Luong, cnn);
+            adt7.Fill(Luong);
+            string sLuong = Luong.Rows[0][0].ToString();
+
+            name_label.Text = "Hi "+ name;
             SoDH_label.Text = "Số đơn hàng đã bán: " + SoDH;
+            DSBH_label.Text = "Doanh số bán hàng: " + sDSBH;
+            Thuong_label.Text = "Thưởng: " + sThuong;
+            Luong_label.Text = "Lương: " + sLuong;
 
             string dd = "select DIEMDANH " +
                 "from NHANVIEN nv, TAIKHOAN tk " +
