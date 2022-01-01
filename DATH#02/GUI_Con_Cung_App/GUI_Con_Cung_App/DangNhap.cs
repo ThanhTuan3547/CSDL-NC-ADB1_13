@@ -61,11 +61,27 @@ namespace GUI_Con_Cung_App
             if (phanLoai == "QL") // phân hệ quản lý 
             {
                 this.Hide();
+               
                 // TODO: cho chuyển qua trang của quản lý  
             }
-            if (phanLoai == "NS") // phân hệ nhân sự
+            if (phanLoai == "NV") // phân hệ nhân sự
             {
+                sqlCon.Open();
+                string get_name = "select TENNV " +
+                "from NHANVIEN nv, TAIKHOAN tk " +
+                "where nv.IDTAIKHOAN = tk.TAIKHOANID AND tk.USERNAME = '" + username + "'";
+
+                DataTable Name = new DataTable();
+                SqlDataAdapter adt2 = new SqlDataAdapter(get_name, sqlCon);
+                adt2.Fill(Name);
+                string name = Name.Rows[0][0].ToString();
+
+                MessageBox.Show("Xin chào " + name);
+                sqlCon.Close();
+
                 this.Hide();
+                NhanVien nhanvien1 = new NhanVien(this, this.sqlCon, username);
+                nhanvien1.Show();
                 //TODO: cho chuyển qua trang của nhân sự
             }
         }
