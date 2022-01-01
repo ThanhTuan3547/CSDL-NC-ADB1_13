@@ -20,6 +20,8 @@ namespace GUI_Con_Cung_App
             this.cdb = cdb;
             this.sqlCon = sqlCon;
             InitializeComponent();
+            TaiKhoan.Text = "taikhoan101";
+            MatKhau.Text = "12345";
         }
 
         private void buttton_DangNhap_Click(object sender, EventArgs e)
@@ -73,7 +75,7 @@ namespace GUI_Con_Cung_App
                 adt2.Fill(Name);
                 string name = Name.Rows[0][0].ToString();
 
-                MessageBox.Show("Xin chào " + name);
+                MessageBox.Show("Xin chào " + name + "!! \nChúc bạn một ngày tốt lành <3");
                 sqlCon.Close();
 
                 this.Hide();

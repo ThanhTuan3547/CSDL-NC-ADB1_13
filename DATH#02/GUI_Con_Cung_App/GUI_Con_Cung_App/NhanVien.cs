@@ -22,7 +22,45 @@ namespace GUI_Con_Cung_App
             this.DN = DN;
             this.username = username;
             InitializeComponent();
-            this.Closing += NhanVien_Closing; ;
+            this.Closing += NhanVien_Closing;
+
+            DaDiemDanh.Hide();
+            
+
+            string get_soDH = "SELECT COUNT(*) "
+                            + "from HOADONOFFLINE hdoff, NHANVIEN nv, TAIKHOAN tk "
+                            + "where hdoff.MANV = nv.MANV AND nv.IDTAIKHOAN = tk.TAIKHOANID AND tk.USERNAME = '" + username + "'";
+
+            string get_name = "select TENNV " +
+                "from NHANVIEN nv, TAIKHOAN tk " +
+                "where nv.IDTAIKHOAN = tk.TAIKHOANID AND tk.USERNAME = '" + username + "'";
+
+            DataTable Name = new DataTable();
+            SqlDataAdapter adt2 = new SqlDataAdapter(get_name, cnn);
+            adt2.Fill(Name);
+            string name = Name.Rows[0][0].ToString();
+
+            DataTable dtSoDH = new DataTable();
+            SqlDataAdapter adt3 = new SqlDataAdapter(get_soDH, cnn);
+            adt3.Fill(dtSoDH);
+            string SoDH = dtSoDH.Rows[0][0].ToString();
+
+            name_label.Text = "Hi "+ name;
+
+            SoDH_label.Text = "Số đơn hàng đã bán: " + SoDH;
+
+            string dd = "select DIEMDANH " +
+                "from NHANVIEN nv, TAIKHOAN tk " +
+                "where nv.IDTAIKHOAN = tk.TAIKHOANID AND tk.USERNAME = '" + username + "'";
+
+            DataTable DiemDanh = new DataTable();
+            SqlDataAdapter adt4 = new SqlDataAdapter(dd, cnn);
+            adt4.Fill(DiemDanh);
+            string count = DiemDanh.Rows[0][0].ToString();
+
+            this.SoNDD_label.Text = "Số ngày đã điểm danh: " + count;
+
+
         }
 
         private void NhanVien_Closing(object sender, CancelEventArgs e)
@@ -50,9 +88,28 @@ namespace GUI_Con_Cung_App
             adt.Fill(DiemDanh);
             string count = DiemDanh.Rows[0][0].ToString();
 
-            MessageBox.Show("Điểm danh thành công \n" + "Tháng này bạn đã điểm danh " + count + " lần");
-            DiemDanh_btn.Enabled = false;
+            MessageBox.Show("Điểm danh thành công!!! \n" + "Tháng này bạn đã điểm danh " + count + " lần");
+            DiemDanh_btn.Hide();
+            DaDiemDanh.Show();
+            this.SoNDD_label.Text = "Số ngày đã điểm danh: " + count;
             cnn.Close();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+ 
+        }
+
+        private void SoDH_listView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void XemCTDH_btn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            NhanVien_CTDHDaBan nvct1 = new NhanVien_CTDHDaBan(this, this.cnn, username);
+            nvct1.Show();
         }
     }
 }
