@@ -15,7 +15,9 @@ namespace GUI_Con_Cung_App
     public partial class HomePage : Form
     {
         private DangNhap DN;
-        private SqlConnection cnn; 
+        private SqlConnection cnn;
+        public List<ChiTietGioHang> GioHang = new List<ChiTietGioHang>();
+        
         public HomePage(DangNhap DN, SqlConnection cnn)
         {
             this.cnn = cnn;
@@ -47,16 +49,38 @@ namespace GUI_Con_Cung_App
             DS_SanPham.Columns[4].DataPropertyName = "SoLuongTon";
             //DS_SanPham.Columns[5].
             DS_SanPham.DataSource = dt.Tables[0];
-        }
 
-        private void DS_SanPham_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
             
         }
+        private void DS_SanPham_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(DS_SanPham.Columns[e.ColumnIndex].Name == "Mua")
+            {
+                if(MessageBox.Show("Bạn muốn thêm sản phẩm vào giỏ hàng?","Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    int masp = int.Parse(DS_SanPham.Rows[e.RowIndex].Cells[0].Value.ToString());
+                    string tensp = DS_SanPham.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    int soluong = 1;
+                    float gia = float.Parse(DS_SanPham.Rows[e.RowIndex].Cells[2].Value.ToString());
+                    float thanhtien = soluong * gia;
+                    ChiTietGioHang chitiet = new ChiTietGioHang(); 
+                    chitiet.ThemVaoGio(masp, tensp, soluong, gia, thanhtien);
+                    GioHang.Add(chitiet);
 
+                }
+            }
+        }
+        
         private void input_TimKiem_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_GioHang_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            GioHang gioHang = new GioHang(this, this.cnn);
+            gioHang.Show();
         }
     }
 }

@@ -15,11 +15,13 @@ namespace GUI_Con_Cung_App
     {
         private ConnectDB cdb;
         private SqlConnection sqlCon;
+        public static int MaKhachHang; 
         public DangNhap(ConnectDB cdb, SqlConnection sqlCon)
         {
             this.cdb = cdb;
             this.sqlCon = sqlCon;
             InitializeComponent();
+
         }
 
         private void buttton_DangNhap_Click(object sender, EventArgs e)
@@ -44,7 +46,8 @@ namespace GUI_Con_Cung_App
             string makh = thongTinTaiKhoan.Rows[0][1].ToString();
             string phanLoai = thongTinTaiKhoan.Rows[0][0].ToString();
 
-            // TODO: con nua...
+            MaKhachHang = int.Parse(makh);
+           
             if (phanLoai == "KH")
             {
                 this.Hide();

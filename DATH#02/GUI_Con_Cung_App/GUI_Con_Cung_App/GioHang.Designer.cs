@@ -1,7 +1,7 @@
 ﻿
 namespace GUI_Con_Cung_App
 {
-    partial class TrangThanhToan
+    partial class GioHang
     {
         /// <summary>
         /// Required designer variable.
@@ -38,6 +38,11 @@ namespace GUI_Con_Cung_App
             this.HT_ThanhToan = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.btn_DatHang = new System.Windows.Forms.Button();
+            this.MaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ChiTietDonHang)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,12 +58,19 @@ namespace GUI_Con_Cung_App
             // ChiTietDonHang
             // 
             this.ChiTietDonHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ChiTietDonHang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaSP,
+            this.TenSP,
+            this.SoLuong,
+            this.Gia,
+            this.ThanhTien});
             this.ChiTietDonHang.Location = new System.Drawing.Point(100, 29);
             this.ChiTietDonHang.Name = "ChiTietDonHang";
             this.ChiTietDonHang.RowHeadersWidth = 51;
             this.ChiTietDonHang.RowTemplate.Height = 24;
             this.ChiTietDonHang.Size = new System.Drawing.Size(517, 150);
             this.ChiTietDonHang.TabIndex = 1;
+            this.ChiTietDonHang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ChiTietDonHang_CellContentClick);
             // 
             // SDT
             // 
@@ -124,8 +136,49 @@ namespace GUI_Con_Cung_App
             this.btn_DatHang.TabIndex = 8;
             this.btn_DatHang.Text = "ĐẶT HÀNG";
             this.btn_DatHang.UseVisualStyleBackColor = true;
+            this.btn_DatHang.Click += new System.EventHandler(this.btn_DatHang_Click);
             // 
-            // TrangThanhToan
+            // MaSP
+            // 
+            this.MaSP.HeaderText = "Mã sản phẩm";
+            this.MaSP.MinimumWidth = 6;
+            this.MaSP.Name = "MaSP";
+            this.MaSP.ReadOnly = true;
+            this.MaSP.Width = 125;
+            // 
+            // TenSP
+            // 
+            this.TenSP.HeaderText = "Tên sản phẩm";
+            this.TenSP.MinimumWidth = 6;
+            this.TenSP.Name = "TenSP";
+            this.TenSP.ReadOnly = true;
+            this.TenSP.Width = 125;
+            // 
+            // SoLuong
+            // 
+            this.SoLuong.HeaderText = "Số Lượng";
+            this.SoLuong.MinimumWidth = 6;
+            this.SoLuong.Name = "SoLuong";
+            this.SoLuong.ReadOnly = true;
+            this.SoLuong.Width = 125;
+            // 
+            // Gia
+            // 
+            this.Gia.HeaderText = "Giá";
+            this.Gia.MinimumWidth = 6;
+            this.Gia.Name = "Gia";
+            this.Gia.ReadOnly = true;
+            this.Gia.Width = 125;
+            // 
+            // ThanhTien
+            // 
+            this.ThanhTien.HeaderText = "Thành tiền";
+            this.ThanhTien.MinimumWidth = 6;
+            this.ThanhTien.Name = "ThanhTien";
+            this.ThanhTien.ReadOnly = true;
+            this.ThanhTien.Width = 125;
+            // 
+            // GioHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -139,8 +192,8 @@ namespace GUI_Con_Cung_App
             this.Controls.Add(this.SDT);
             this.Controls.Add(this.ChiTietDonHang);
             this.Controls.Add(this.label1);
-            this.Name = "TrangThanhToan";
-            this.Text = "Thanh Toán";
+            this.Name = "GioHang";
+            this.Text = "Giỏ Hàng";
             ((System.ComponentModel.ISupportInitialize)(this.ChiTietDonHang)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -158,5 +211,10 @@ namespace GUI_Con_Cung_App
         private System.Windows.Forms.Label HT_ThanhToan;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button btn_DatHang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaSP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenSP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Gia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ThanhTien;
     }
 }

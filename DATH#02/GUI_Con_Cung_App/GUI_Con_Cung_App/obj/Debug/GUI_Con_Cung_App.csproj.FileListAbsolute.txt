@@ -15,7 +15,6 @@ C:\Users\admin\Documents\GitHub\CSDL-NC-ADB1_13\DATH#02\GUI_Con_Cung_App\GUI_Con
 C:\Users\admin\Documents\GitHub\CSDL-NC-ADB1_13\DATH#02\GUI_Con_Cung_App\GUI_Con_Cung_App\bin\Debug\GUI_Con_Cung_App.pdb
 C:\Users\admin\Documents\GitHub\CSDL-NC-ADB1_13\DATH#02\GUI_Con_Cung_App\GUI_Con_Cung_App\obj\Debug\GUI_Con_Cung_App.csproj.AssemblyReference.cache
 C:\Users\admin\Documents\GitHub\CSDL-NC-ADB1_13\DATH#02\GUI_Con_Cung_App\GUI_Con_Cung_App\obj\Debug\GUI_Con_Cung_App.DangNhap.resources
-C:\Users\admin\Documents\GitHub\CSDL-NC-ADB1_13\DATH#02\GUI_Con_Cung_App\GUI_Con_Cung_App\obj\Debug\GUI_Con_Cung_App.TrangThanhToan.resources
 C:\Users\admin\Documents\GitHub\CSDL-NC-ADB1_13\DATH#02\GUI_Con_Cung_App\GUI_Con_Cung_App\obj\Debug\GUI_Con_Cung_App.HomePage.resources
 C:\Users\admin\Documents\GitHub\CSDL-NC-ADB1_13\DATH#02\GUI_Con_Cung_App\GUI_Con_Cung_App\obj\Debug\GUI_Con_Cung_App.Properties.Resources.resources
 C:\Users\admin\Documents\GitHub\CSDL-NC-ADB1_13\DATH#02\GUI_Con_Cung_App\GUI_Con_Cung_App\obj\Debug\GUI_Con_Cung_App.csproj.GenerateResource.cache
@@ -36,3 +35,4 @@ C:\Users\hieu2\OneDrive\Tài liệu\GitHub\CSDL-NC-ADB1_13\DATH#02\GUI_Con_Cun
 C:\Users\hieu2\OneDrive\Tài liệu\GitHub\CSDL-NC-ADB1_13\DATH#02\GUI_Con_Cung_App\GUI_Con_Cung_App\obj\Debug\GUI_Con_Cung_App.exe
 C:\Users\hieu2\OneDrive\Tài liệu\GitHub\CSDL-NC-ADB1_13\DATH#02\GUI_Con_Cung_App\GUI_Con_Cung_App\obj\Debug\GUI_Con_Cung_App.pdb
 C:\Users\admin\Documents\GitHub\CSDL-NC-ADB1_13\DATH#02\GUI_Con_Cung_App\GUI_Con_Cung_App\obj\Debug\GUI_Con_Cung_App.ConnectDB.resources
+C:\Users\admin\Documents\GitHub\CSDL-NC-ADB1_13\DATH#02\GUI_Con_Cung_App\GUI_Con_Cung_App\obj\Debug\GUI_Con_Cung_App.GioHang.resources
