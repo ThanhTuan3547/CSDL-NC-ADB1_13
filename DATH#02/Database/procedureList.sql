@@ -134,3 +134,14 @@ begin tran
 
 --6: xem tất cả sản phẩm trong cửa hàng: 
 
+--10: Điểm danh
+create proc DiemDanh(@username varchar(20))
+as 
+begin
+	UPDATE NHANVIEN 
+	SET DIEMDANH = DIEMDANH + 1
+	FROM NHANVIEN nv, TAIKHOAN tk
+	WHERE nv.IDTAIKHOAN = tk.TAIKHOANID AND tk.USERNAME = @username
+end
+go
+--
