@@ -40,3 +40,4 @@ C:\Users\hieu2\OneDrive\Tài liệu\GitHub\CSDL-NC-ADB1_13\DATH#02\GUI_Con_Cun
 C:\Users\hieu2\OneDrive\Tài liệu\GitHub\CSDL-NC-ADB1_13\DATH#02\GUI_Con_Cung_App\GUI_Con_Cung_App\obj\Debug\GUI_Con_Cung_App.GioHang.resources
 C:\Users\hieu2\OneDrive\Tài liệu\GitHub\CSDL-NC-ADB1_13\DATH#02\GUI_Con_Cung_App\GUI_Con_Cung_App\obj\Debug\GUI_Con_Cung_App.QuanLi.resources
 C:\Users\hieu2\OneDrive\Tài liệu\GitHub\CSDL-NC-ADB1_13\DATH#02\GUI_Con_Cung_App\GUI_Con_Cung_App\obj\Debug\GUI_Con_Cung_App.NhanVien_HSLV.resources
+C:\Users\hieu2\OneDrive\Tài liệu\GitHub\CSDL-NC-ADB1_13\DATH#02\GUI_Con_Cung_App\GUI_Con_Cung_App\obj\Debug\GUI_Con_Cung_App.LichSu.resources

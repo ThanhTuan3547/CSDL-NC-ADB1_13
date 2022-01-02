@@ -15,13 +15,14 @@ namespace GUI_Con_Cung_App
     {
         private ConnectDB cdb;
         private SqlConnection sqlCon;
+        public static int makhachhang;
         public DangNhap(ConnectDB cdb, SqlConnection sqlCon)
         {
             this.cdb = cdb;
             this.sqlCon = sqlCon;
             InitializeComponent();
-            TaiKhoan.Text = "taikhoan102";
-            MatKhau.Text = "12345";
+            TaiKhoan.Text = "";
+            MatKhau.Text = "";
         }
 
         private void buttton_DangNhap_Click(object sender, EventArgs e)
