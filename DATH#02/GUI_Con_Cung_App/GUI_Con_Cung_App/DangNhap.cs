@@ -15,12 +15,14 @@ namespace GUI_Con_Cung_App
     {
         private ConnectDB cdb;
         private SqlConnection sqlCon;
+        public static int makhachhang ;
         public DangNhap(ConnectDB cdb, SqlConnection sqlCon)
         {
             this.cdb = cdb;
             this.sqlCon = sqlCon;
             InitializeComponent();
-            TaiKhoan.Text = "taikhoan101";
+            TaiKhoan.Text = "taikhoan34";
+            //TaiKhoan.Text = "taikhoan101";
             MatKhau.Text = "12345";
         }
 
@@ -44,6 +46,7 @@ namespace GUI_Con_Cung_App
             adt.Fill(thongTinTaiKhoan);
             sqlCon.Close();
             string makh = thongTinTaiKhoan.Rows[0][1].ToString();
+            makhachhang = int.Parse(makh); 
             string phanLoai = thongTinTaiKhoan.Rows[0][0].ToString();
 
             // TODO: con nua...

@@ -58,6 +58,12 @@
     <Compile Include="DangNhap.Designer.cs">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="GioHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GioHang.Designer.cs">
+      <DependentUpon>GioHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="NhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,12 +75,6 @@
     </Compile>
     <Compile Include="NhanVien_CTDHDaBan.Designer.cs">
       <DependentUpon>NhanVien_CTDHDaBan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ThanhToan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ThanhToan.Designer.cs">
-      <DependentUpon>ThanhToan.cs</DependentUpon>
     </Compile>
     <Compile Include="HomePage.cs">
       <SubType>Form</SubType>
@@ -90,14 +90,14 @@
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GioHang.resx">
+      <DependentUpon>GioHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NhanVien.resx">
       <DependentUpon>NhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NhanVien_CTDHDaBan.resx">
       <DependentUpon>NhanVien_CTDHDaBan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ThanhToan.resx">
-      <DependentUpon>ThanhToan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>

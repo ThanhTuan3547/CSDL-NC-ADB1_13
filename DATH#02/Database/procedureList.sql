@@ -74,7 +74,6 @@ create proc ThemDonHangOnline (
 )
 as 
 begin tran
-	set @MAHOADON = 
 	insert into HOADONONLINE values (@MAHOADON, @MAKH, @SDT, Cast(@NGAYLAP as datetime),@DIACHIGIAOHANG, @HINHTHUCTHANHTOAN,@DONVIVANCHUYEN,@PHIVANCHUYEN, @TONGTIEN)
 	commit tran
 go 
