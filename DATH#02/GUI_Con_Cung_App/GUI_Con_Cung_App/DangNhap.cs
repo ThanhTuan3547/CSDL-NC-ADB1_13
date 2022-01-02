@@ -15,7 +15,7 @@ namespace GUI_Con_Cung_App
     {
         private ConnectDB cdb;
         private SqlConnection sqlCon;
-        public static int makhachhang;
+        public static int makhachhang; 
         public DangNhap(ConnectDB cdb, SqlConnection sqlCon)
         {
             this.cdb = cdb;

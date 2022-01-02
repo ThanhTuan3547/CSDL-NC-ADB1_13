@@ -1,5 +1,6 @@
 ﻿--1: Đăng nhập 
-
+use ADB1_N13_DATH#02
+go
 create proc DangNhap
 (	
 	@TK varchar(20),
@@ -123,16 +124,14 @@ begin tran
 	from 
 			(select hd.MAHOADON, hd.NGAYLAP
 			from HOADONONLINE hd 
-			where hd.MAKH = 27) hd join CTHOADONONLINE ct on hd.MAHOADON = ct.MAHOADON) cthd join sanpham sp on cthd.MASP = sp.MASP
+			where hd.MAKH = @MaKH) hd join CTHOADONONLINE ct on hd.MAHOADON = ct.MAHOADON) cthd join sanpham sp on cthd.MASP = sp.MASP
 	commit tran 
 	
-	select * from HOADONONLINE 
-	where Makh = 27
-
-	select * from CTHOADONONLINE 
-	where MAHOADON = 115
-
+	
 --6: xem tất cả sản phẩm trong cửa hàng: 
+
+select * 
+from SANPHAM join LOAISANPHAM on MALOAI = MALOAI 
 
 --10: Điểm danh
 create proc DiemDanh(@username varchar(20))
