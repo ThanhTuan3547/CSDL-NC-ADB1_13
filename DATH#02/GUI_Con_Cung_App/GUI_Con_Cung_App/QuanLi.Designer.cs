@@ -51,6 +51,7 @@ namespace GUI_Con_Cung_App
             // 
             // DTOn_btn
             // 
+            this.DTOn_btn.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DTOn_btn.Location = new System.Drawing.Point(272, 56);
             this.DTOn_btn.Name = "DTOn_btn";
             this.DTOn_btn.Size = new System.Drawing.Size(60, 25);
@@ -61,6 +62,7 @@ namespace GUI_Con_Cung_App
             // 
             // DTOff_btn
             // 
+            this.DTOff_btn.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DTOff_btn.Location = new System.Drawing.Point(272, 86);
             this.DTOff_btn.Name = "DTOff_btn";
             this.DTOff_btn.Size = new System.Drawing.Size(60, 25);
@@ -71,6 +73,7 @@ namespace GUI_Con_Cung_App
             // 
             // SDT_btn
             // 
+            this.SDT_btn.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SDT_btn.Location = new System.Drawing.Point(619, 72);
             this.SDT_btn.Name = "SDT_btn";
             this.SDT_btn.Size = new System.Drawing.Size(60, 25);
@@ -174,9 +177,10 @@ namespace GUI_Con_Cung_App
             // 
             // HS_btn
             // 
+            this.HS_btn.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HS_btn.Location = new System.Drawing.Point(251, 156);
             this.HS_btn.Name = "HS_btn";
-            this.HS_btn.Size = new System.Drawing.Size(81, 25);
+            this.HS_btn.Size = new System.Drawing.Size(105, 25);
             this.HS_btn.TabIndex = 23;
             this.HS_btn.Text = "Xem chi tiết";
             this.HS_btn.UseVisualStyleBackColor = true;
