@@ -92,6 +92,16 @@ namespace GUI_Con_Cung_App
                 //SqlCommand = 
                 SqlCommand command = new SqlCommand(query, sqlCon);
                 command.ExecuteNonQuery();
+
+                //them chi tiet hoa don 
+                for (int i = 0; i < home.CTgiohang.Rows.Count; i ++)
+                {
+                    query = "exec ThemCTDHOnline " + maDonHang + "," + home.CTgiohang.Rows[i][0] + ",'" + home.CTgiohang.Rows[i][2] + "','" + home.CTgiohang.Rows[i][3] + "', " + home.CTgiohang.Rows[i][4] ;
+                    command.Parameters.Clear();
+                    command.CommandText = query;
+                    command.ExecuteNonQuery();
+                }
+
                 this.sqlCon.Close();
                 MessageBox.Show("Đặt hàng thành công");
                 ChiTietDonHang.DataSource = null;

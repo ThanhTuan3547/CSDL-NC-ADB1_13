@@ -16,7 +16,7 @@ namespace GUI_Con_Cung_App
     {
         private DangNhap DN;
         private SqlConnection cnn;
-        public List<ChiTietGioHang> GioHang = new List<ChiTietGioHang>();
+        //public List<ChiTietGioHang> GioHang = new List<ChiTietGioHang>();
         public DataTable CTgiohang = new DataTable(); 
         
         public HomePage(DangNhap DN, SqlConnection cnn)
