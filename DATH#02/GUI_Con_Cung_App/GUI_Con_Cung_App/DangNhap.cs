@@ -21,8 +21,8 @@ namespace GUI_Con_Cung_App
             this.cdb = cdb;
             this.sqlCon = sqlCon;
             InitializeComponent();
-            TaiKhoan.Text = "taikhoan102";
-            MatKhau.Text = "12345";
+            TaiKhoan.Text = "";
+            MatKhau.Text = "";
         }
 
         private void buttton_DangNhap_Click(object sender, EventArgs e)
