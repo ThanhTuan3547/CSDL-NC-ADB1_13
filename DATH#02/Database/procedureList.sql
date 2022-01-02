@@ -130,6 +130,9 @@ begin tran
 	
 --6: xem tất cả sản phẩm trong cửa hàng: 
 
+select * 
+from SANPHAM join LOAISANPHAM on MALOAI = MALOAI 
+
 --10: Điểm danh
 create proc DiemDanh(@username varchar(20))
 as 
