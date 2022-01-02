@@ -74,7 +74,6 @@ create proc ThemDonHangOnline (
 )
 as 
 begin tran
-	set @MAHOADON = 
 	insert into HOADONONLINE values (@MAHOADON, @MAKH, @SDT, Cast(@NGAYLAP as datetime),@DIACHIGIAOHANG, @HINHTHUCTHANHTOAN,@DONVIVANCHUYEN,@PHIVANCHUYEN, @TONGTIEN)
 	commit tran
 go 
@@ -112,6 +111,26 @@ go
 
 --5: xem lịch sử mua hàng 
 
+create proc XemLichSuMuaHang (
+	@MaKH int
+)
+as
+begin tran 
+
+	select sp.TENSP, cthd.MASP,cthd.GIATIEN, cthd.MAHOADON, cthd.NGAYLAP, cthd.THANHTIEN, cthd.SOLUONG
+	from 
+	(select hd.MAHOADON, hd.NGAYLAP, ct.MASP, ct.GIATIEN, ct.THANHTIEN, ct.SOLUONG
+	from 
+			(select hd.MAHOADON, hd.NGAYLAP
+			from HOADONONLINE hd 
+			where hd.MAKH = 27) hd join CTHOADONONLINE ct on hd.MAHOADON = ct.MAHOADON) cthd join sanpham sp on cthd.MASP = sp.MASP
+	commit tran 
+	
+	select * from HOADONONLINE 
+	where Makh = 27
+
+	select * from CTHOADONONLINE 
+	where MAHOADON = 115
 
 --6: xem tất cả sản phẩm trong cửa hàng: 
 

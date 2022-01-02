@@ -16,7 +16,8 @@ namespace GUI_Con_Cung_App
     {
         private DangNhap DN;
         private SqlConnection cnn;
-        public List<ChiTietGioHang> GioHang = new List<ChiTietGioHang>();
+        //public List<ChiTietGioHang> GioHang = new List<ChiTietGioHang>();
+        public DataTable CTgiohang = new DataTable(); 
         
         public HomePage(DangNhap DN, SqlConnection cnn)
         {
@@ -49,8 +50,12 @@ namespace GUI_Con_Cung_App
             DS_SanPham.Columns[4].DataPropertyName = "SoLuongTon";
             //DS_SanPham.Columns[5].
             DS_SanPham.DataSource = dt.Tables[0];
-
-            
+            // setup gio hang 
+            CTgiohang.Columns.Add("MaSP", typeof(int));
+            CTgiohang.Columns.Add( "TenSP", typeof(string));
+            CTgiohang.Columns.Add( "SoLuong", typeof(int));
+            CTgiohang.Columns.Add( "Gia", typeof(float));
+            CTgiohang.Columns.Add( "ThanhTien", typeof(float));
         }
         private void DS_SanPham_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -63,9 +68,15 @@ namespace GUI_Con_Cung_App
                     int soluong = 1;
                     float gia = float.Parse(DS_SanPham.Rows[e.RowIndex].Cells[2].Value.ToString());
                     float thanhtien = soluong * gia;
-                    ChiTietGioHang chitiet = new ChiTietGioHang(); 
-                    chitiet.ThemVaoGio(masp, tensp, soluong, gia, thanhtien);
-                    GioHang.Add(chitiet);
+                    //
+                    DataRow row = CTgiohang.NewRow();
+                    row["MaSP"] = masp;
+                    row["TenSP"] = tensp;
+                    row["SoLuong"] = soluong;
+                    row["Gia"] = gia;
+                    row["ThanhTien"] = thanhtien;
+                    CTgiohang.Rows.Add(row);
+
 
                 }
             }
@@ -82,5 +93,11 @@ namespace GUI_Con_Cung_App
             GioHang gioHang = new GioHang(this, this.cnn);
             gioHang.Show();
         }
+
+        private void HomePage_Load(object sender, EventArgs e)
+        {
+            
+        }
+        
     }
 }
