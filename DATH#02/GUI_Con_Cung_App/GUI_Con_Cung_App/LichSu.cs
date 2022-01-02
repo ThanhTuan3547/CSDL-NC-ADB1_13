@@ -29,13 +29,16 @@ namespace GUI_Con_Cung_App
 
             dataGridView1.ColumnCount = 5;
             dataGridView1.Columns[0].DataPropertyName = "TenSP";
-            dataGridView1.Columns[1].DataPropertyName = "Gia";
+            dataGridView1.Columns[1].DataPropertyName = "GiaTien";
             dataGridView1.Columns[2].DataPropertyName = "SoLuong";
-            dataGridView1.Columns[3].DataPropertyName = "NgayMua";
+            dataGridView1.Columns[3].DataPropertyName = "NgayLap";
             dataGridView1.Columns[4].DataPropertyName = "ThanhTien";
 
             // lấy dữ liệu từ sql 
-
+            DataTable tb = new DataTable();
+            SqlDataAdapter adt = new SqlDataAdapter("exec XemLichSuMuaHang " + DangNhap.makhachhang, sqlCon);
+            adt.Fill(tb);
+            dataGridView1.DataSource = tb; 
             //string query = "exec"
         }
     }

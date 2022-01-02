@@ -113,6 +113,13 @@ namespace GUI_Con_Cung_App
         {
             
         }
+
+        private void btn_LichSu_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LichSu ls = new LichSu(this, sqlCon);
+            ls.Show();
+        }
     }
     public class ChiTietGioHang
     {
