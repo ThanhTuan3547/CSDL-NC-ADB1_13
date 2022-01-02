@@ -11,15 +11,15 @@ USE ADB1_N13_DATH#02
 --      select on TAIKHOAN(TAIKHOANID, USERNAME)
 -- add khachhang account
 GO
---EXEC sp_addLogin 'khachhang','khachhang'
+EXEC sp_addLogin 'khachhang','khachhang'
 
 -- add user_khachhang for login_khachhang account
---CREATE USER user_khachhang FOR LOGIN khachhang
+CREATE USER user_khachhang FOR LOGIN khachhang
 
 -- add role customer
---EXEC sp_addrole 'khach_hang'
+EXEC sp_addrole 'khach_hang'
 
---EXEC sp_addrolemember 'khach_hang',user_khachhang 
+EXEC sp_addrolemember 'khach_hang',user_khachhang 
 
 
 -- SELECT ON HOADONONLINE
@@ -75,15 +75,15 @@ TO khach_hang
 --      select, insert on CTNHAPHANG
 --      select on QUANTRI
 -- add login_quantri account
---EXEC sp_addLogin 'quantri','quantri'
+EXEC sp_addLogin 'quantri','quantri'
 
 -- add user_quantri for login_quantri account
---CREATE USER user_quantri FOR LOGIN quantri
+CREATE USER user_quantri FOR LOGIN quantri
 
 -- add role quan_tri
---EXEC sp_addrole 'quan_tri'
+EXEC sp_addrole 'quan_tri'
 
---EXEC sp_addrolemember 'quan_tri',user_quantri 
+EXEC sp_addrolemember 'quan_tri',user_quantri 
 
 --select, insert, update, delete on LOAISANPHAM
 GRANT SELECT, INSERT, UPDATE, DELETE
@@ -127,28 +127,28 @@ TO quan_tri
 
 -- Quan Li
 -- them tai khoan doi tac login_quanli
---EXEC sp_addLogin 'login_quanli','login_quanli'
+EXEC sp_addLogin 'login_quanli','login_quanli'
 -- them user_doitac cho login_quanli
---CREATE USER user_quanli FOR LOGIN  login_quanli
+CREATE USER user_quanli FOR LOGIN  login_quanli
 -- them role quanli
---EXEC sp_addrole 'quanli'
---EXEC sp_addrolemember 'quanli',user_quanli
+EXEC sp_addrole 'quanli'
+EXEC sp_addrolemember 'quanli',user_quanli
 
-GRANT SELECT
-ON OBJECT::dbo.KiemTraDoanhThuBanHang
-TO quanli
+--GRANT SELECT
+--ON OBJECT::dbo.KiemTraDoanhThuBanHang
+--TO quanli
 
-GRANT SELECT
-ON OBJECT::dbo.QuanLiHangHoaNhap
-TO quanli
+--GRANT SELECT
+--ON OBJECT::dbo.QuanLiHangHoaNhap
+--TO quanli
 
-GRANT SELECT
-ON OBJECT::dbo.CacMatHangBanChay
-TO quanli
+--GRANT SELECT
+--ON OBJECT::dbo.CacMatHangBanChay
+--TO quanli
 
-GRANT SELECT
-ON OBJECT::dbo.CacMatHangBanCham
-TO quanli
+--GRANT SELECT
+--ON OBJECT::dbo.CacMatHangBanCham
+--TO quanli
 
 GRANT SELECT
 ON OBJECT::SANPHAM
@@ -156,12 +156,12 @@ TO quanli
 
 -- Nhan Su
 -- them tai khoan doi tac login_nhansu
---EXEC sp_addLogin 'login_nhansu','login_nhansu'
+EXEC sp_addLogin 'login_nhansu','login_nhansu'
 -- them user_doitac cho login_nhansu
---CREATE USER user_nhansu FOR LOGIN  login_nhansu
+CREATE USER user_nhansu FOR LOGIN  login_nhansu
 -- them role nhansu
---EXEC sp_addrole 'nhansu'
---EXEC sp_addrolemember 'nhansu',user_nhansu
+EXEC sp_addrole 'nhansu'
+EXEC sp_addrolemember 'nhansu',user_nhansu
 
 GRANT SELECT
 ON OBJECT::NHANVIEN(MANV, TENNV, SDT, DIACHI, LOAINV, LUONG, THUONG, DOANHSOBANHANG, DIEMDANH, CMND)
