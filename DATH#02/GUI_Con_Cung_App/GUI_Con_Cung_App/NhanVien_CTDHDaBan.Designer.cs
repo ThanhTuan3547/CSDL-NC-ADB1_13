@@ -43,6 +43,7 @@ namespace GUI_Con_Cung_App
             this.DHDB_dataGridView.Name = "DHDB_dataGridView";
             this.DHDB_dataGridView.Size = new System.Drawing.Size(696, 275);
             this.DHDB_dataGridView.TabIndex = 0;
+            this.DHDB_dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DHDB_dataGridView_CellContentClick);
             // 
             // label1
             // 

@@ -38,6 +38,8 @@
             this.DSBH_label = new System.Windows.Forms.Label();
             this.Thuong_label = new System.Windows.Forms.Label();
             this.Luong_label = new System.Windows.Forms.Label();
+            this.name1_label = new System.Windows.Forms.Label();
+            this.ChucVu_label = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -60,7 +62,7 @@
             // 
             // XemCTDH_btn
             // 
-            this.XemCTDH_btn.Location = new System.Drawing.Point(189, 91);
+            this.XemCTDH_btn.Location = new System.Drawing.Point(190, 144);
             this.XemCTDH_btn.Name = "XemCTDH_btn";
             this.XemCTDH_btn.Size = new System.Drawing.Size(60, 28);
             this.XemCTDH_btn.TabIndex = 3;
@@ -83,7 +85,7 @@
             // 
             this.SoNDD_label.AutoSize = true;
             this.SoNDD_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SoNDD_label.Location = new System.Drawing.Point(12, 70);
+            this.SoNDD_label.Location = new System.Drawing.Point(12, 120);
             this.SoNDD_label.Name = "SoNDD_label";
             this.SoNDD_label.Size = new System.Drawing.Size(55, 16);
             this.SoNDD_label.TabIndex = 9;
@@ -93,7 +95,7 @@
             // 
             this.SoDH_label.AutoSize = true;
             this.SoDH_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SoDH_label.Location = new System.Drawing.Point(12, 100);
+            this.SoDH_label.Location = new System.Drawing.Point(12, 150);
             this.SoDH_label.Name = "SoDH_label";
             this.SoDH_label.Size = new System.Drawing.Size(45, 16);
             this.SoDH_label.TabIndex = 10;
@@ -101,19 +103,21 @@
             // 
             // name_label
             // 
+            this.name_label.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.name_label.AutoSize = true;
             this.name_label.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.name_label.Location = new System.Drawing.Point(330, 13);
+            this.name_label.Location = new System.Drawing.Point(336, 9);
             this.name_label.Name = "name_label";
             this.name_label.Size = new System.Drawing.Size(46, 16);
             this.name_label.TabIndex = 11;
             this.name_label.Text = "Name";
+            this.name_label.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // DSBH_label
             // 
             this.DSBH_label.AutoSize = true;
             this.DSBH_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DSBH_label.Location = new System.Drawing.Point(12, 130);
+            this.DSBH_label.Location = new System.Drawing.Point(12, 180);
             this.DSBH_label.Name = "DSBH_label";
             this.DSBH_label.Size = new System.Drawing.Size(46, 16);
             this.DSBH_label.TabIndex = 12;
@@ -123,7 +127,7 @@
             // 
             this.Thuong_label.AutoSize = true;
             this.Thuong_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Thuong_label.Location = new System.Drawing.Point(12, 160);
+            this.Thuong_label.Location = new System.Drawing.Point(12, 210);
             this.Thuong_label.Name = "Thuong_label";
             this.Thuong_label.Size = new System.Drawing.Size(54, 16);
             this.Thuong_label.TabIndex = 13;
@@ -133,17 +137,39 @@
             // 
             this.Luong_label.AutoSize = true;
             this.Luong_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Luong_label.Location = new System.Drawing.Point(12, 190);
+            this.Luong_label.Location = new System.Drawing.Point(12, 240);
             this.Luong_label.Name = "Luong_label";
             this.Luong_label.Size = new System.Drawing.Size(45, 16);
             this.Luong_label.TabIndex = 14;
             this.Luong_label.Text = "Luong";
             // 
+            // name1_label
+            // 
+            this.name1_label.AutoSize = true;
+            this.name1_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.name1_label.Location = new System.Drawing.Point(12, 60);
+            this.name1_label.Name = "name1_label";
+            this.name1_label.Size = new System.Drawing.Size(50, 16);
+            this.name1_label.TabIndex = 15;
+            this.name1_label.Text = "HoTen";
+            // 
+            // ChucVu_label
+            // 
+            this.ChucVu_label.AutoSize = true;
+            this.ChucVu_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChucVu_label.Location = new System.Drawing.Point(12, 90);
+            this.ChucVu_label.Name = "ChucVu_label";
+            this.ChucVu_label.Size = new System.Drawing.Size(54, 16);
+            this.ChucVu_label.TabIndex = 16;
+            this.ChucVu_label.Text = "ChucVu";
+            // 
             // NhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(428, 235);
+            this.ClientSize = new System.Drawing.Size(428, 273);
+            this.Controls.Add(this.ChucVu_label);
+            this.Controls.Add(this.name1_label);
             this.Controls.Add(this.Luong_label);
             this.Controls.Add(this.Thuong_label);
             this.Controls.Add(this.DSBH_label);
@@ -173,5 +199,7 @@
         private System.Windows.Forms.Label DSBH_label;
         private System.Windows.Forms.Label Thuong_label;
         private System.Windows.Forms.Label Luong_label;
+        private System.Windows.Forms.Label name1_label;
+        private System.Windows.Forms.Label ChucVu_label;
     }
 }

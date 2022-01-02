@@ -39,7 +39,7 @@ namespace GUI_Con_Cung_App
         DataSet SoDH()
         {
             DataSet data = new DataSet();
-            string query = "select hdoff.MANV as 'Mã nhân viên' , hdoff.MAHOADON as 'Mã hóa đơn', hdoff.MACN as 'Mã chi nhánh', hdoff.MAKH as 'Mã khách hàng', hdoff.TONGTIEN as 'Tổng tiền', hdoff.NGAYLAP as 'Ngày lập' "
+            string query = "select hdoff.MANV as 'Mã nhân viên', nv.TENNV as 'Tên nhân viên', hdoff.MAHOADON as 'Mã hóa đơn', hdoff.MACN as 'Mã chi nhánh', hdoff.MAKH as 'Mã khách hàng', hdoff.TONGTIEN as 'Tổng tiền', hdoff.NGAYLAP as 'Ngày lập' "
                             + "from HOADONOFFLINE hdoff, NHANVIEN nv, TAIKHOAN tk "
                             + "where hdoff.MANV = nv.MANV AND nv.IDTAIKHOAN = tk.TAIKHOANID AND tk.USERNAME = '" + username + "'";
 
@@ -49,6 +49,11 @@ namespace GUI_Con_Cung_App
             this.cnn.Close();
 
             return data;
+
+        }
+
+        private void DHDB_dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

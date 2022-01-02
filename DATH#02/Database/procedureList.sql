@@ -115,3 +115,32 @@ go
 
 --6: xem tất cả sản phẩm trong cửa hàng: 
 
+--10: Điểm danh
+create proc DiemDanh(@username varchar(20))
+as 
+begin
+	UPDATE NHANVIEN 
+	SET DIEMDANH = DIEMDANH + 1
+	FROM NHANVIEN nv, TAIKHOAN tk
+	WHERE nv.IDTAIKHOAN = tk.TAIKHOANID AND tk.USERNAME = @username
+end
+go
+--
+select * from NHANVIEN WHERE LOAINV = 'Bán hàng'
+select * from TAIKHOAN WHERE LOAITK = 'QL'
+select * from QUANTRI
+select * from HOADONONLINE
+select * from HOADONOFFLINE
+select * from CTHOADONONLINE
+select * from CTHOADONOFFLINE
+
+select THUONG from NHANVIEN nv, TAIKHOAN tk where nv.IDTAIKHOAN = tk.TAIKHOANID AND tk.USERNAME = 'taikhoan101'
+
+SELECT hdoff.MANV as 'Mã nhân viên', hdoff.MAHOADON, hdoff.MACN, hdoff.MAKH, hdoff.TONGTIEN, hdoff.NGAYLAP 
+from HOADONOFFLINE hdoff, NHANVIEN nv, TAIKHOAN tk
+where hdoff.MANV = nv.MANV AND nv.IDTAIKHOAN = tk.TAIKHOANID AND tk.USERNAME = 'taikhoan101'
+
+UPDATE TAIKHOAN SET LOAITK = 'QL' WHERE TAIKHOANID = 'tk102'
+UPDATE NHANVIEN SET DIEMDANH = 1 WHERE IDTAIKHOAN = 'tk102' 
+
+SELECT ((SELECT SUM(TONGTIEN) FROM HOADONONLINE) + (SELECT SUM(TONGTIEN) FROM HOADONOFFLINE) - (SELECT SUM(PHIVANCHUYEN) FROM HOADONONLINE)) AS 'Tổng tiền'
