@@ -15,14 +15,12 @@ namespace GUI_Con_Cung_App
     {
         private ConnectDB cdb;
         private SqlConnection sqlCon;
-        public static int makhachhang ;
         public DangNhap(ConnectDB cdb, SqlConnection sqlCon)
         {
             this.cdb = cdb;
             this.sqlCon = sqlCon;
             InitializeComponent();
-            TaiKhoan.Text = "taikhoan34";
-            //TaiKhoan.Text = "taikhoan101";
+            TaiKhoan.Text = "taikhoan102";
             MatKhau.Text = "12345";
         }
 
@@ -46,24 +44,37 @@ namespace GUI_Con_Cung_App
             adt.Fill(thongTinTaiKhoan);
             sqlCon.Close();
             string makh = thongTinTaiKhoan.Rows[0][1].ToString();
-            makhachhang = int.Parse(makh); 
             string phanLoai = thongTinTaiKhoan.Rows[0][0].ToString();
 
             // TODO: con nua...
-            if (phanLoai == "KH")
+            /*if (phanLoai == "KH")
             {
                 this.Hide();
                 HomePage KH = new HomePage(this, this.sqlCon);
                 KH.Show(); 
-            }
+            }*/
             if(phanLoai == "QT")
             {
                 this.Hide();
             }
             if (phanLoai == "QL") // phân hệ quản lý 
             {
+                sqlCon.Open();
+                string get_name = "select TENNV " +
+                "from NHANVIEN nv, TAIKHOAN tk " +
+                "where nv.IDTAIKHOAN = tk.TAIKHOANID AND tk.USERNAME = '" + username + "'";
+
+                DataTable Name = new DataTable();
+                SqlDataAdapter adt2 = new SqlDataAdapter(get_name, sqlCon);
+                adt2.Fill(Name);
+                string name = Name.Rows[0][0].ToString();
+
+                MessageBox.Show("Xin chào " + name + "!! \nChúc bạn một ngày tốt lành <3");
+                sqlCon.Close();
+
                 this.Hide();
-               
+                QuanLi quanli1 = new QuanLi(this, this.sqlCon, username);
+                quanli1.Show();
                 // TODO: cho chuyển qua trang của quản lý  
             }
             if (phanLoai == "NV") // phân hệ nhân sự
@@ -84,7 +95,7 @@ namespace GUI_Con_Cung_App
                 this.Hide();
                 NhanVien nhanvien1 = new NhanVien(this, this.sqlCon, username);
                 nhanvien1.Show();
-                //TODO: cho chuyển qua trang của nhân sự
+                //TODO: cho chuyển qua trang của nhân viên
             }
         }
 

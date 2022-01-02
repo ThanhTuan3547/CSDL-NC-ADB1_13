@@ -47,6 +47,11 @@ namespace GUI_Con_Cung_App
                 "from NHANVIEN nv, TAIKHOAN tk " +
                 "where nv.IDTAIKHOAN = tk.TAIKHOANID AND tk.USERNAME = '" + username + "'";
 
+            string get_ChucVu = "select LOAINV " +
+                "from NHANVIEN nv, TAIKHOAN tk " +
+                "where nv.IDTAIKHOAN = tk.TAIKHOANID AND tk.USERNAME = '" + username + "'";
+
+
             DataTable Name = new DataTable();
             SqlDataAdapter adt2 = new SqlDataAdapter(get_name, cnn);
             adt2.Fill(Name);
@@ -72,6 +77,13 @@ namespace GUI_Con_Cung_App
             adt7.Fill(Luong);
             string sLuong = Luong.Rows[0][0].ToString();
 
+            DataTable ChucVu = new DataTable();
+            SqlDataAdapter adt8 = new SqlDataAdapter(get_ChucVu, cnn);
+            adt8.Fill(ChucVu);
+            string sChucVu = ChucVu.Rows[0][0].ToString();
+
+            name1_label.Text = "Tên nhân viên: " + name;
+            ChucVu_label.Text = "Chức vụ: " + sChucVu;
             name_label.Text = "Hi "+ name;
             SoDH_label.Text = "Số đơn hàng đã bán: " + SoDH;
             DSBH_label.Text = "Doanh số bán hàng: " + sDSBH;
