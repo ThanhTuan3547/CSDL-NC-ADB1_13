@@ -16,7 +16,7 @@ namespace GUI_Con_Cung_App
         public ConnectDB()
         {
             InitializeComponent();
-            Server_textBox.Text = "LAPTOP-FMCUOBFE\\SQLEXPRESS";
+            Server_textBox.Text = "PIKACHU\\PIKACHU";
             //Server_textBox.Text = "PIKACHU\\PIKACHU";
             Database_textBox.Text = "ADB1_N13_DATH#02";
         }
